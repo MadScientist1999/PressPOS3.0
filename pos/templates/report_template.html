@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ differentiator }} Sales Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            background-color: #f7f9fb;
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 3px solid #4a90e2;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 40px 0;
+            background: white;
+        }
+        th, td {
+            padding: 12px 10px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        th { background-color: #f5f8fa; }
+        td:first-child, th:first-child { text-align: left; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .totals {
+            background-color: #e8f4fd;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>{{ differentiator }} Report</h1>
+<p><strong>{{ differentiator }}:</strong> {{ user }}</p>
+<p><strong>Start Date:</strong> {{ start }}</p>
+<p><strong>End Date:</strong> {{ end }}</p>
+
+<table>
+    <tr>
+        <th>Document Type</th>
+        <th>Currency</th>
+        <th>Payment Method</th>
+        <th>Total Invoices</th>
+        <th>Average Invoice</th>
+        <th>Subtotal</th>
+        <th>Gross Profit</th>
+        <th>Net Profit</th>
+        <th>Total Tax</th>
+        <th>Total</th>
+    </tr>
+
+    {% for stats in statsInvoice %}
+    <tr>
+        <td>{{ stats.receipt_type }}</td>
+        <td>{{ stats.currency.symbol }}</td>
+        <td>{{ stats.method }}</td>
+        <td>{{ stats.total_invoices }}</td>
+        <td>{{ stats.avg_invoice|floatformat:2 }}</td>
+        <td>{{ stats.total_subtotal|floatformat:2 }}</td>
+        <td>{{ stats.gross_profit|floatformat:2 }}</td>
+        <td>{{ stats.net_profit|floatformat:2 }}</td>
+        <td>{{ stats.total_tax|floatformat:2 }}</td>
+        <td>{{ stats.total_sales|floatformat:2 }}</td>
+    </tr>
+    {% endfor %}
+    {%if balance%}
+   <tr>
+       
+        <th>Account Balance</th>
+        <th>Change</th>
+    </tr>
+    <tr>
+       
+        <td>{{ balance|floatformat:2 }}</td>
+        <td>{{ change|floatformat:2 }}</td>
+    </tr>
+{%endif%}
+</table>
+
+{% if chart_url %}
+<div style="text-align:center; margin-bottom:30px;">
+    <h2>Sales Summary Chart</h2>
+    <img src="{{ chart_url }}" style="max-width:100%; height:auto;">
+</div>
+{% endif %}
+
+</body>
+</html>

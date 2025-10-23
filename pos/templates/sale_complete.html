@@ -1,0 +1,950 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% if not transaction.isA4  %}
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="80mm.css"">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt</title>
+<style> 
+    @page {
+  size: 80mm auto;
+  margin: 0;
+}
+body {
+  width: 80mm;
+  margin: 0;
+  font-size: 10pt;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .container {
+      width: 80mm;
+      margin: 0 auto;
+      padding: 5mm;
+    }
+
+    .header,
+    .footer {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .logo {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5mm;
+    }
+
+    .invoice-details,
+    .customer-details,
+    .items,
+    .totals {
+      margin-bottom: 5mm;
+    }
+
+    .invoice-details p,
+    .customer-details p {
+      font-size: 12px;
+      margin-bottom: 2mm;
+    }
+
+    .invoice-details .invoice-type {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .items th,
+    .items td {
+      text-align: left;
+      font-size: 12px;
+      padding: 2mm 0;
+    }
+
+    .items th {
+      border-bottom: 1px solid #000;
+    }
+    .wrap-text {
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 100px; /* optional limit */
+}
+
+    .totals p {
+      font-size: 12px;
+      margin-top: 4mm;
+      font-weight: bold;
+    }
+
+    .totals .total {
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .totals .total-amount {
+      font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      {%if logo%}}
+      <div class="logo">
+
+        <img src={{transaction.branch.logo}} alt="Company Logo" height="40">
+      </div>
+      {%endif%}
+      
+      {%if transaction.branch.company.name%}
+      <h2> {{ transaction.branch.company.name }}</h2>
+      {%endif%}
+      <h3>{{ type }}</h3>
+      {%if transaction.branch%}
+      <p><strong>Branch:</strong>{{ transaction.branch.name }}</p>
+      {%endif%}
+      
+      {%if transaction.branch.company.phone_number%}
+      <p><strong>Contact:</strong> {{ transaction.branch.company.phone_number }}</p>
+      {%endif%}
+      {%if transaction.branch.email%}
+      <p><strong>Email:</strong> {{ transaction.branch.email}}</p>
+      {%endif%}
+      
+      {%if transaction.branch.company.tin_number%}
+      <p><strong>TIN Number:</strong>{{ transaction.branch.company.tin_number }}</p>
+      {%endif%}
+
+      {%if transaction.branch.company.vat_number%}
+      <p><strong>VAT Number:</strong>{{ transaction.branch.company.vat_number }}</p>
+      {%endif%}
+      
+      <p class="whitespace-nowrap font-bold text-main text-left"><strong>User:</strong>{{ transaction.user.username}}</p>
+    </div>
+
+    <!-- Invoice Details Section -->
+    <div class="invoice-details">
+      <p>Date: {{ transaction.date }}</p>
+      <p>Time: {{ transaction.time }}</p>
+
+      {% if transaction.receipt_type == "FISCAL TAX INVOICE" %}
+      <p>Invoice #: {{ transaction.invoiceNo }}</p>
+      {% elif transaction.receipt_type == "CREDIT NOTE" %}
+      <p>Credit #: {{ transaction.invoiceNo }}</p>
+      <p>Reason: {{ transaction.reason }}</p>
+      <p>Reference:{{transaction.referenceNo}}</p>
+      {% elif transaction.receipt_type == "DEBIT NOTE" %}
+      <p>DEBIT #: {{ transaction.invoiceNo }}</p>
+      <p>Reason: {{ transaction.reason }}</p>
+      <p>Reference:{{transaction.referenceNo}}</p>
+      {% elif transaction.receipt_type == "QUOTATION" %}
+      <p>Quotation #: {{ transaction.invoiceNo }}</p>
+      {% endif %}
+    </div>
+      
+      {%if transaction.customer.name%}
+      <p><strong>To:</strong> {{ transaction.customer.name }}</p>
+      {%endif%}
+      {%if transaction.customer.tradename%}
+      <p><strong>Trading as:</strong> {{ transaction.customer.tradename }}</p>
+      {%endif%}
+      
+      {%if transaction.customer.tin_number%}
+      <p><strong>TIN Number:</strong>{{ transaction.customer.tin_number }}</p>
+      {%endif%}
+      {%if transaction.customer.vat_number%}
+      <p><strong>VAT Number:</strong>{{ transaction.customer.vat_number }}</p>
+      {%endif%}
+      {%if transaction.customer.email%}
+      <p><strong>Email:</strong>{{ transaction.customer.email }}</p>
+      {%endif%}
+      {%if transaction.customer.phone_number%}
+      <p><strong>Email:</strong>{{ transaction.customer.phone_number }}</p>
+      {%endif%}
+      {%if transaction.customer.address%}
+      <p><strong>Address:</strong>{{ transaction.customer.address }} {{transaction.customer.street}} {{transaction.customer.city}}</p>
+      {%endif%}
+      {%if transaction.customer.province%}
+      <p><strong>Province:</strong>{{ transaction.customer.province }}</p>
+      {%endif%}
+      <p>Payment Method: {{transaction.payment_method}}</p>
+    <!-- Items Section -->
+    <div class="items">
+      <table style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Qty</th>
+	          <th>Tax %</th>
+            <th>VAT</th>
+            <th>Total</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in transaction.products.all %}
+          <tr>
+            <td class=word-text>{{ product.product.product_code }}</td>
+            <td class=wrap-text>{{ product.product.name }}</td>
+            <td class=wrap-text>{{ product.selling_price|floatformat:2 }}</td>
+            <td class=wrap-text>{{ product.quantity }}</td>
+	    <td class=wrap-text>{{ product.product.tax }}</td>
+            <td class=wrap-text>{{ product.vat|floatformat:2 }}</td>
+            <td class=wrap-text>{{ product.total|floatformat:2 }}</td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Totals Section -->
+    <div class="totals">
+      <p>Sub Total: {{ transaction.currency.symbol }}{{ transaction.subtotal|floatformat:2  }}</p>
+      <p>VAT Total: {{ transaction.currency.symbol }}{{ transaction.tax|floatformat:2  }}</p>
+      <p>Total    : {{ transaction.currency.symbol }}{{ transaction.total|floatformat:2 }}</p>
+      {% if type == "FISCAL TAX INVOICE" %}
+      <p>Payment: {{ transaction.currency.symbol }}{{ transaction.payment |floatformat:2 }}</p>
+      <p>Change: {{ transaction.currency.symbol }}{{ transaction.change |floatformat:2 }}</p>
+      {% endif %}
+      
+    </div>
+    
+    <!-- Footer Section -->
+  {% if qrurl %}
+  <div class="qr-container">
+    <img src="{{ qrpath }}" alt="QR Code">
+    <div class="qr-text">
+      <p><strong>Verification Code:</strong> {{ verificationCode }}</p>
+      <p>Verify at:<br><a href="{{ qrurl }}" target="_blank">{{ qrurl }}</a></p>
+      <p>Device ID: {{ deviceID }}</p>
+      <p>Invoice #: {{ globalNo }}</p>
+      <p>Fiscal Day: {{ FiscalDay }}</p>
+    </div>
+  </div>
+  {% endif %}
+    <div class="footer">
+      <p>Thank you for your business!</p>
+
+
+    </div>
+    
+
+      </footer>
+    </div>
+    
+   
+  </div>
+</body>
+
+{%else%}
+<head>
+  <meta charset="UTF-8">
+  {%load static%}
+  <link rel="stylesheet" href='{% static "css/a4.css" %}'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ <style>
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb;
+    }
+
+    ::before,
+    ::after {
+      --tw-content: '';
+    }
+
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit;
+    }
+    @page {
+  size: A4;
+  margin: 20mm; /* or your desired space */
+  
+  @bottom-center {
+    content: element(footer);
+  }
+}
+
+footer {
+  position: running(footer);
+}
+  .page {
+  width: 210mm;
+  height: 297mm; /* exact height of A4 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15mm 20mm;
+  box-sizing: border-box;
+}
+.content {
+  flex-grow: 1;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px;
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    code,
+    kbd,
+    samp,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1em;
+    }
+
+    small {
+      font-size: 80%;
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'] {
+      appearance: button;
+      -webkit-appearance: button;
+      background-color: transparent;
+      background-image: none;
+    }
+
+    :-moz-focusring {
+      outline: auto;
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+
+    progress {
+      vertical-align: baseline;
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    [type='search'] {
+      appearance: textfield;
+      -webkit-appearance: textfield;
+      outline-offset: -2px;
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+    }
+
+    summary {
+      display: list-item;
+    }
+
+    blockquote,
+    dl,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    figure,
+    p,
+    pre {
+      margin: 0;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+    }
+
+    legend {
+      padding: 0;
+    }
+
+    ol,
+    ul,
+    menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    dialog {
+      padding: 0;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af;
+    }
+
+    button,
+    [role="button"] {
+      cursor: pointer;
+    }
+
+    :disabled {
+      cursor: default;
+    }
+
+    img,
+    svg,
+    video,
+    canvas,
+    audio,
+    iframe,
+    embed,
+    object {
+      display: block;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .bottom-0 {
+      bottom: 0px;
+    }
+
+    .left-0 {
+      left: 0px;
+    }
+
+    .table {
+      display: table;
+    }
+
+    .h-12 {
+      height: 3rem;
+    }
+
+    .w-1\/2 {
+      width: 50%;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .border-collapse {
+      border-collapse: collapse;
+    }
+
+    .border-spacing-0 {
+      --tw-border-spacing-x: 0px;
+      --tw-border-spacing-y: 0px;
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+
+    .whitespace-nowrap {
+      white-space: nowrap;
+    }
+
+    .border-b {
+      border-bottom-width: 1px;
+    }
+
+    .border-b-2 {
+      border-bottom-width: 2px;
+    }
+
+    .border-r {
+      border-right-width: 1px;
+    }
+
+    .border-main {
+      border-color: #5c6ac4;
+    }
+
+    .bg-main {
+      background-color: #5c6ac4;
+    }
+
+    .bg-slate-100 {
+      background-color: #f1f5f9;
+    }
+
+    .p-3 {
+      padding: 0.75rem;
+    }
+
+    .px-14 {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+    }
+
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .py-10 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .pb-3 {
+      padding-bottom: 0.75rem;
+    }
+
+    .pl-2 {
+      padding-left: 0.5rem;
+    }
+
+    .pl-3 {
+      padding-left: 0.75rem;
+    }
+
+    .pl-4 {
+      padding-left: 1rem;
+    }
+
+    .pr-3 {
+      padding-right: 0.75rem;
+    }
+
+    .pr-4 {
+      padding-right: 1rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .align-top {
+      vertical-align: top;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+ 
+
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    .text-main {
+      color: #5c6ac4;
+    }
+
+    .text-neutral-600 {
+      color: #525252;
+    }
+
+    .text-neutral-700 {
+      color: #404040;
+    }
+
+    .text-slate-300 {
+      color: #cbd5e1;
+    }
+
+    .text-slate-400 {
+      color: #94a3b8;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    @page {
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }</style>
+</head>
+
+<body>
+  <div>
+    <div class="py-4">
+      <div class="px-14 py-6">
+        <table class="w-full border-collapse border-spacing-0">
+          <tbody>
+            <tr>
+              <td>
+                  <p class="whitespace-nowrap text-slate-400 text-left">Date: {{transaction.date}}</p>
+                  <p class="whitespace-nowrap text-slate-400 text-left">Time: {{transaction.time}}</p>
+
+
+              </td>
+              <td> 
+                <h1 class="whitespace-nowrap font-bold text-main text-center">{{transaction.receipt_type}}</h1>
+              </td>
+
+                {%if transaction.receipt_type == "FISCAL TAX INVOICE"%}
+                <td>
+                <p class="whitespace-nowrap text-slate-400 text-right">Invoice #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right">{{ invoiceNo }}</p>
+                </td> 
+                {%elif transaction.receipt_type == "CREDIT NOTE"%}
+                <td>
+                <p class="whitespace-nowrap text-slate-400 text-right">Credit #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ invoiceNo }}</p>
+                <p class="whitespace-nowrap text-slate-400 text-right">Reference #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ referenceNo }}</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="reason">Reason:{{reason}}</p>
+               </td>
+                {%elif transaction.receipt_type == "DEBIT NOTE"%}
+                <td>
+                <p class="whitespace-nowrap text-slate-400 text-right">Debit #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.invoiceNo }}</p>
+                <p class="whitespace-nowrap text-slate-400 text-right">Reference #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.referenceNo }}</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="reason">Reason:{{ transaction.reason }}</p>
+                </td>
+                {%elif transaction.receipt_type == "QUOTATION"%}
+                <td>
+                <p class="whitespace-nowrap text-slate-400 text-right">QUOTATION #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.invoiceNo }}</p>
+                </td>
+                {%elif transaction.receipt_type == "STOCK PURCHASE"%}
+                <td>
+                <p class="whitespace-nowrap text-slate-400 text-right">PURCHASE #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.invoiceNo }}</p>
+                </td>
+              
+
+                {%elif transaction.receipt_type == "STOCK RETURN"%}
+                <td>
+                <p class="whitespace-nowrap text-slate-400 text-right">RETURN #</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.invoiceNo }}</p>
+                </td>
+                {%endif%} 
+  <div class="text-sm">
+      <table class="border-collapse border-spacing-0 w-full text-sm text-gray-600">
+  <tbody>
+    <tr>
+      <!-- Entity (Supplier or Customer) -->
+      <td class="whitespace-nowrap text-slate-400 text-left">
+        {% if transaction.supplier.name %}
+        <div class="whitespace-nowrap text-slate-400 text-left">Supplier</div>
+        <div>{{ transaction.supplier.name }}</div>
+        {% if transaction.supplier.tin_number %}<div><strong>TIN:</strong> {{ transaction.supplier.tin_number }}</div>{% endif %}
+        {% if transaction.supplier.vat_number %}<div><strong>VAT:</strong> {{ transaction.supplier.vat_number }}</div>{% endif %}
+        {% endif %}
+
+        {% if transaction.customer.name %}
+        <div class="whitespace-nowrap text-slate-400 text-left">Customer</div>
+        <div>{{ transaction.customer.name }}</div>
+        {% if transaction.customer.tradename %}<div><strong>Trading As:</strong> {{ transaction.customer.tradename }}</div>{% endif %}
+        {% if transaction.customer.tin_number %}<div><strong>TIN:</strong> {{ transaction.customer.tin_number }}</div>{% endif %}
+        {% if transaction.customer.vat_number %}<div><strong>VAT:</strong> {{ transaction.customer.vat_number }}</div>{% endif %}
+        {% endif %}
+      </td>
+
+      <!-- Contact & Address -->
+      <td class="whitespace-nowrap text-slate-400 text-right">
+        {% if transaction.supplier.phone_number %}<div><strong>Contact:</strong> {{ transaction.supplier.phone_number }}</div>{% endif %}
+        {% if transaction.supplier.email %}<div><strong>Email:</strong> {{ transaction.supplier.email }}</div>{% endif %}
+
+        {% if transaction.customer.phone_number %}<div><strong>Contact:</strong> {{ transaction.customer.phone_number }}</div>{% endif %}
+        {% if transaction.customer.email %}<div><strong>Email:</strong> {{ transaction.customer.email }}</div>{% endif %}
+        {% if transaction.customer.address %}<div><strong>Address:</strong> {{ transaction.customer.address }} {{ transaction.customer.street }}</div>{% endif %}
+        {% if transaction.customer.city %}<div><strong>Region:</strong> {{ transaction.customer.city }} {{ transaction.customer.province }}</div>{% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+
+      <div class="px-14 py-10 text-sm text-neutral-700">
+        <table class="w-full border-collapse border-spacing-0">
+          <thead>
+            <tr>
+              <td class="border-b-2 border-main pb-3 pl-3 font-bold text-main">Code</td>
+              <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Product details</td>
+              <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Unit Price</td>
+              <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Qty.</td>
+              <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Tax %</td>
+              <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">VAT</td>
+              <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Sub Total</td>
+              <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Total</td>
+            </tr>
+          </thead>
+          
+            <tbody>
+                {% for product in transaction.products.all %}
+                
+                <tr>
+                  <td class="border-b-2 border-main pb-3 pl-3 font-bold text-main">{{product.product.hscode}}</td>
+                  <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">{{product.product.name}}</td>
+                  <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">{{product.selling_price|floatformat:2 }}</td>
+                  <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">{{product.quantity}}</td>
+                  <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">{{product.product.tax}}</td>
+                  <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">{{product.vat|floatformat:2 }}</td>
+                  <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">{{product.subtotal|floatformat:2 }}</td>
+                  <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">{{product.total|floatformat:2 }}</td>
+                 
+                            {% csrf_token %}
+                            <input type="hidden" name="item_id" value="{{ item.id }}">
+                            
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+         
+            <tr>
+              <td colspan="7">
+                <table class="w-full border-collapse border-spacing-0">
+                   
+                    <tbody>
+                    <tr>
+                      <td class="w-full"></td>
+                      <td>
+                        <table class="w-full border-collapse border-spacing-0">
+                          <tbody>
+                            <tr>
+                              <td class="border-b p-3">
+                                <div class="whitespace-nowrap text-slate-400">Sub total:</div>
+                              </td>
+                              <td class="border-b p-3 text-right">
+                                <div class="whitespace-nowrap font-bold text-main">{{transaction.currency.symbol}}{{transaction.subtotal|floatformat:2 }}</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="p-3">
+                                <div class="whitespace-nowrap text-slate-400">VAT total:</div>
+                              </td>
+                              <td class="p-3 text-right">
+                                <div class="whitespace-nowrap font-bold text-main">{{transaction.currency.symbol}}{{transaction.tax|floatformat:2 }}</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="p-3">
+                                <div class="whitespace-nowrap text-slate-400">Total:</div>
+                              </td>
+                              <td class="p-3 text-right">
+                                <div class="whitespace-nowrap font-bold text-main">{{transaction.currency.symbol}}{{transaction.total|floatformat:2 }}</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="p-3 text-right">
+                               
+
+                              </td>
+                              {%if transaction.receipt_type == "FISCAL TAX INVOICE"%}
+
+                              <td class="bg-main p-3">
+                                <div class="whitespace-nowrap font-bold text-white">Payment:</div>
+                              </td>
+                           
+                              <td class="bg-main p-3 text-right">
+                                <div class="whitespace-nowrap font-bold text-white">{{transaction.currency.symbol}}{{transaction.payment|floatformat:2 }}</div>
+                              </td>
+                             
+                              <td class="bg-main p-3">
+                                <div class="whitespace-nowrap font-bold text-white">Change:</div>
+                              </td>
+                              <td class="bg-main p-3 text-right">
+                                <div class="whitespace-nowrap font-bold text-white">{{transaction.currency.symbol}}{{transaction.change|floatformat:2 }}</div>
+
+                              </td>
+                              {%endif%}
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+         
+     
+      <div class="px-14 text-sm text-neutral-700">
+        <p class="text-main font-bold">PAYMENT DETAILS</p>
+        <p>Payment Method: {{transaction.payment_method}}</p>
+
+<div class="text-right mt-6">
+
+</div>  
+       
+      </div>
+     
+     
+      </div>
+    </div>
+
+
+</body>
+{%endif%}
+  
+</html>

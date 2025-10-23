@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ differentiator }} - {{ branch.name }}</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 30px; }
+        h1 { border-bottom: 3px solid #4a90e2; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: right; }
+        th { background-color: #f5f8fa; }
+        td:first-child, th:first-child { text-align: left; }
+        tr:nth-child(even) { background-color: #fafafa; }
+    </style>
+</head>
+<body>
+    <h1>{{ differentiator }} - {{ branch.name }}</h1>
+    <p><strong>Date:</strong> {{ today }}</p>
+
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Batch No</th>
+            <th>Quantity</th>
+            <th>Sold</th>
+            <th>Remaining</th>
+            <th>Buying Price</th>
+            <th>Selling Price</th>
+            <th>Supplier</th>
+            <th>Created</th>
+            <th>Expiry Date</th>
+            <th>Days in Stock</th>
+            <th>Days to Expiry</th>
+        </tr>
+        {% for s in stock_data %}
+        <tr>
+            <td>{{ s.product }}</td>
+            <td>{{ s.batch_no }}</td>
+            <td>{{ s.quantity }}</td>
+            <td>{{ s.sold }}</td>
+            <td>{{ s.remaining }}</td>
+            <td>{{ s.buying_price|floatformat:2 }}</td>
+            <td>{{ s.selling_price|floatformat:2 }}</td>
+            <td>{{ s.supplier }}</td>
+            <td>{{ s.created }}</td>
+            <td>{{ s.expiry_date }}</td>
+            <td>{{ s.days_in_stock }}</td>
+            <td>{{ s.days_to_expiry }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-row {
+      display: flex;
+      align-items: flex-start; /* align top */
+      border-top: 1px solid #000;
+      padding: 5px 10px;
+      gap: 10px; /* space between bank details and QR */
+    }
+    .bank-details {
+      font-size: 9px;
+      line-height: 1.2;
+    }
+    .bank-details p {
+      margin: 1px 0;
+    }
+    .qr-section {
+      display: flex;
+      align-items: flex-start;
+      font-family: monospace;
+      font-size: 8px;
+      border: 1px dotted #000;
+      padding: 3px;
+    }
+    .qr-section img {
+      width: 40px; /* smaller QR code */
+      height: 40px;
+      border: 1px solid #ccc;
+      padding: 1px;
+      margin-right: 5px;
+    }
+    .qr-text {
+      line-height: 1.1;
+    }
+    .qr-text p {
+      margin: 1px 0;
+    }
+
+
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb;
+    }
+
+    ::before,
+    ::after {
+      --tw-content: '';
+    }
+
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit;
+    }
+    @page {
+  size: A4;
+  margin: 20mm; /* or your desired space */
+  
+  @bottom-center {
+    content: element(footer);
+  }
+}
+
+footer {
+  position: running(footer);
+}
+  .page {
+  width: 210mm;
+  height: 297mm; /* exact height of A4 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15mm 20mm;
+  box-sizing: border-box;
+}
+.content {
+  flex-grow: 1;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px;
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    code,
+    kbd,
+    samp,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1em;
+    }
+
+    small {
+      font-size: 80%;
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'] {
+      appearance: button;
+      -webkit-appearance: button;
+      background-color: transparent;
+      background-image: none;
+    }
+
+    :-moz-focusring {
+      outline: auto;
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+
+    progress {
+      vertical-align: baseline;
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    [type='search'] {
+      appearance: textfield;
+      -webkit-appearance: textfield;
+      outline-offset: -2px;
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+    }
+
+    summary {
+      display: list-item;
+    }
+
+    blockquote,
+    dl,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    figure,
+    p,
+    pre {
+      margin: 0;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+    }
+
+    legend {
+      padding: 0;
+    }
+
+    ol,
+    ul,
+    menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    dialog {
+      padding: 0;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af;
+    }
+
+    button,
+    [role="button"] {
+      cursor: pointer;
+    }
+
+    :disabled {
+      cursor: default;
+    }
+
+    img,
+    svg,
+    video,
+    canvas,
+    audio,
+    iframe,
+    embed,
+    object {
+      display: block;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .bottom-0 {
+      bottom: 0px;
+    }
+
+    .left-0 {
+      left: 0px;
+    }
+
+    .table {
+      display: table;
+    }
+
+    .h-12 {
+      height: 3rem;
+    }
+
+    .w-1\/2 {
+      width: 50%;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .border-collapse {
+      border-collapse: collapse;
+    }
+
+    .border-spacing-0 {
+      --tw-border-spacing-x: 0px;
+      --tw-border-spacing-y: 0px;
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+
+    .whitespace-nowrap {
+      white-space: nowrap;
+    }
+
+    .border-b {
+      border-bottom-width: 1px;
+    }
+
+    .border-b-2 {
+      border-bottom-width: 2px;
+    }
+
+    .border-r {
+      border-right-width: 1px;
+    }
+
+    .border-main {
+      border-color: #5c6ac4;
+    }
+
+    .bg-main {
+      background-color: #5c6ac4;
+    }
+
+    .bg-slate-100 {
+      background-color: #f1f5f9;
+    }
+
+    .p-3 {
+      padding: 0.75rem;
+    }
+
+    .px-14 {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+    }
+
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .py-10 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .pb-3 {
+      padding-bottom: 0.75rem;
+    }
+
+    .pl-2 {
+      padding-left: 0.5rem;
+    }
+
+    .pl-3 {
+      padding-left: 0.75rem;
+    }
+
+    .pl-4 {
+      padding-left: 1rem;
+    }
+
+    .pr-3 {
+      padding-right: 0.75rem;
+    }
+
+    .pr-4 {
+      padding-right: 1rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .align-top {
+      vertical-align: top;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+ 
+
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    .text-main {
+      color: #5c6ac4;
+    }
+
+    .text-neutral-600 {
+      color: #525252;
+    }
+
+    .text-neutral-700 {
+      color: #404040;
+    }
+
+    .text-slate-300 {
+      color: #cbd5e1;
+    }
+
+    .text-slate-400 {
+      color: #94a3b8;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    @page {
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="footer-row">
+    <!-- Banking details on the left -->
+    <table class="w-full border-collapse border-spacing-0">
+      <tbody>
+      <tr>
+   
+    <div class="bank-details">
+      <td>
+      <p><strong>BANKING DETAILS</strong></p>
+      {% if bank.bank %}<p><strong>Bank:</strong> {{ bank.bank }}</p>{% endif %}
+    </td>
+    <td> 
+      {% if bank.bank_branch %}<p><strong>Branch:</strong> {{ bank.bank_branch }}</p>{% endif %}
+      </td>
+      <td> 
+      {% if bank.account_name %}<p><strong>Account Name:</strong> {{ bank.account_name }}</p>{% endif %}
+      </td>
+      <td> 
+      {% if bank.account_number %}<p><strong>Account Number:</strong> {{ bank.account_number }}</p>{% endif %}
+      </td>
+      <td>
+      {% if bank.bank_account %}<p><strong>Bank Account:</strong> {{ bank.bank_account }}</p>{% endif %}
+      </td>
+      <td> 
+      {% if bank.swift_code %}<p><strong>SWIFT Code:</strong> {{ bank.swift_code }}</p>{% endif %}
+    </td>
+
+    </div>
+   
+     <!-- QR code and verification info on the right, next to banking details -->
+    {% if qrurl %}
+    <tr>
+      <td>
+    <div class="qr-section">
+      <img src="{{ qrpath }}" alt="QR Code">
+      <div class="qr-text">
+      </td>
+        <td>
+        <p class="whitespace-nowrap text-slate-400 text-left"><strong>Code:</strong> {{ verificationCode }}</p>
+        
+        <p class="whitespace-nowrap text-slate-400 text-left">Verify: <a href="{{ qrurl }}" target="_blank" style="color: blue;">{{ qrurl }}</a></p>
+     
+        <p class="whitespace-nowrap text-slate-400 text-left">ID: {{ deviceID }}</p>
+    
+        <p class="whitespace-nowrap text-slate-400 text-left">Inv #: {{ globalNo }}</p>
+       
+       
+        <p class="whitespace-nowrap text-slate-400 text-left">Day: {{ FiscalDay }}</p>
+        </td>
+      </div>
+    </div>
+    {% endif %}
+    
+  </tr>
+    
+                   
+                    </tbody>
+                  </table>
+  </div>
+</body>
+</html>

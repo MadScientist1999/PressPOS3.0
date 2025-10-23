@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tax Returns</title>
+
+  <style>
+    body {
+      width: 302px; /* ~80mm */
+      font-family: 'Courier New', monospace;
+      background: #fff;
+      padding: 8px;
+      font-size: 11.5px;
+      line-height: 1.4em;
+      color: #000;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .section {
+      margin: 8px 0;
+    }
+
+    .line {
+      border-top: 1px dashed #333;
+      margin: 6px 0;
+    }
+
+    h2, h3, h4 {
+      margin: 4px 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    td, th {
+      padding: 2px 0;
+      word-wrap: break-word;
+    }
+
+    td:first-child, th:first-child {
+      text-align: left;
+    }
+
+    td:nth-child(2), td:nth-child(3),
+    th:nth-child(2), th:nth-child(3) {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<div class="center">
+  <h2>{{ company.name }}</h2>
+  <p>TIN No: {{ company.tin_number }}</p>
+  <p>VAT No: {{ company.vat_number }}</p>
+  <p>{{ company.address }}</p>
+  <p>{{ company.email }}</p>
+  <p>{{ company.phone }}</p>
+</div>
+
+<div class="line"></div>
+<div class="center"><h3>Tax REPORT</h3></div>
+<div class="line"></div>
+
+<div class="section">
+  <strong>From:</strong> {{ start}}<br>
+  <strong>To:</strong> {{ end }}<br>
+  <strong>Serial No:</strong> {{ fiscal.device_serial }}<br>
+  <strong>Device Id:</strong> {{ fiscal.device_id }}<br>
+</div>
+
+    
+<div class="section">
+  <div class="line"></div>
+  <strong>Statistics USD</strong>
+  <table>
+    <tr><td>Total VAT 15%</td><td>{{stats.total15USD}}</td></tr>
+    <tr><td>Total VAT 0%</td><td>{{ stats.total0USD }}</td></tr>
+    <tr><td>Total Exempt</td><td>{{ stats.totalExemptUSD }}</td></tr>
+    
+  </table>
+
+  <div class="line"></div>
+  <strong>Total Taxes</strong>
+  <table>
+    <tr><td>Tax 15%</td><td>{{ stats.totalTaxUSD }}</td></tr>
+    <tr><td><strong>Total Tax</strong></td><td><strong>{{ stats.totalTaxUSD }}</strong></td></tr>
+  </table>
+  <strong>Statistics ZWG</strong>
+  <table>
+    <tr><td>Total VAT 15%</td><td>{{stats.total15ZWG}}</td></tr>
+    <tr><td>Total VAT 0%</td><td>{{ stats.total0ZWG }}</td></tr>
+    <tr><td>Total Exempt</td><td>{{ stats.totalExemptZWG }}</td></tr>
+    
+  </table>
+
+  <div class="line"></div>
+  <strong>Total Taxes</strong>
+  <table>
+    <tr><td>Tax 15%</td><td>{{ stats.totalTaxZWG }}</td></tr>
+    <tr><td><strong>Total Tax</strong></td><td><strong>{{ stats.totalTaxZWG }}</strong></td></tr>
+  </table>
+
+</body>
+</html>

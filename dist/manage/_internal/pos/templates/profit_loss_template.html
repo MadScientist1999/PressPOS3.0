@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ differentiator }} - {{ branch.name }}</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 30px; }
+        h1 { border-bottom: 3px solid #4a90e2; padding-bottom: 10px; }
+        table { width: 50%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: right; }
+        th { background-color: #f5f8fa; }
+        td:first-child, th:first-child { text-align: left; }
+        tr:nth-child(even) { background-color: #fafafa; }
+    </style>
+</head>
+<body>
+    <h1>{{ differentiator }} - {{ branch.name }}</h1>
+    <p><strong>Start Date:</strong> {{ start }}</p>
+    <p><strong>End Date:</strong> {{ end }}</p>
+
+    <table>
+        <tr><th>Metric</th><th>Amount</th></tr>
+        <tr><td>Total Sales</td><td>{{ total_sales|floatformat:2 }}</td></tr>
+        <tr><td>Total Tax</td><td>{{ total_tax|floatformat:2 }}</td></tr>
+        <tr><td>Cost of Goods Sold (COGS)</td><td>{{ total_cogs|floatformat:2 }}</td></tr>
+        <tr><td>Gross Profit</td><td>{{ gross_profit|floatformat:2 }}</td></tr>
+        <tr><td>Net Profit</td><td>{{ net_profit|floatformat:2 }}</td></tr>
+    </table>
+</body>
+</html>

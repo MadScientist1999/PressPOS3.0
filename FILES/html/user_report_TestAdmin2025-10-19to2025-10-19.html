@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Sales Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            background-color: #f7f9fb;
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 3px solid #4a90e2;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 40px 0;
+            background: white;
+        }
+        th, td {
+            padding: 12px 10px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        th { background-color: #f5f8fa; }
+        td:first-child, th:first-child { text-align: left; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .totals {
+            background-color: #e8f4fd;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>User Report</h1>
+<p><strong>User:</strong> Admin</p>
+<p><strong>Start Date:</strong> Oct. 19, 2025</p>
+<p><strong>End Date:</strong> Oct. 19, 2025</p>
+
+<table>
+    <tr>
+        <th>Document Type</th>
+        <th>Currency</th>
+        <th>Payment Method</th>
+        <th>Total Invoices</th>
+        <th>Average Invoice</th>
+        <th>Subtotal</th>
+        <th>Gross Profit</th>
+        <th>Net Profit</th>
+        <th>Total Tax</th>
+        <th>Total</th>
+    </tr>
+
+    
+    <tr>
+        <td>FISCAL TAX INVOICE</td>
+        <td>USD</td>
+        <td>Cash</td>
+        <td>4</td>
+        <td>366.00</td>
+        <td>1273.04</td>
+        <td>0.00</td>
+        <td>0.00</td>
+        <td>190.96</td>
+        <td>1464.00</td>
+    </tr>
+    
+
+    <tr class="totals">
+        <td colspan="9">Grand Total</td>
+        <td>
+            
+        </td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

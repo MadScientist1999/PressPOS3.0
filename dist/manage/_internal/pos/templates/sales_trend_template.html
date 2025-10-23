@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ differentiator }} - {{ branch.name }}</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 30px; }
+        h1 { border-bottom: 3px solid #4a90e2; padding-bottom: 10px; }
+        table { width: 60%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: right; }
+        th { background-color: #f5f8fa; }
+        td:first-child, th:first-child { text-align: left; }
+        tr:nth-child(even) { background-color: #fafafa; }
+    </style>
+</head>
+<body>
+    <h1>{{ differentiator }} - {{ branch.name }}</h1>
+    <p><strong>Start Date:</strong> {{ start }}</p>
+    <p><strong>End Date:</strong> {{ end }}</p>
+    <p><strong>Grouped By:</strong> {{ group_by|capfirst }}</p>
+
+    <table>
+        <tr>
+            <th>Period</th>
+            <th>Total Sales</th>
+        </tr>
+        {% for period, total in trend_data %}
+        <tr>
+            <td>{{ period }}</td>
+            <td>{{ total|floatformat:2 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
