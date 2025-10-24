@@ -2,7 +2,6 @@
 import os
 import json
 import datetime
-from .pretransactions import *
 import logging
 from decimal import Decimal, ROUND_HALF_UP
 from django.utils import timezone

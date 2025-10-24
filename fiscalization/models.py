@@ -1,7 +1,7 @@
 from django.db import models
 from matplotlib import lines
 from pos.models import Receipt,Branch,Currency,ReportEntry
-
+from main.settings import HTML_ROOT
 class FiscalBranch(Branch):
     
     # Core details
@@ -68,6 +68,8 @@ class FiscalReceipt(Receipt):
     day = models.ForeignKey('OpenDay', on_delete=models.CASCADE,null=True)
     verified = models.BooleanField(default=False,null=True)
     verified_at = models.DateTimeField(null=True)
+    qrcode=models.FileField(null=True,upload_to=f"{HTML_ROOT}")
+    
     def __str__(self):
         return f"{self.receipt_type} - Total: ${self.total}"
 

@@ -198,7 +198,6 @@ class Transaction(models.Model):
     Total15VAT = models.FloatField(default=0,)
     TotalNonVAT = models.FloatField(default=0)
     TotalExempt = models.FloatField(default=0)
-    invoiceItems=models.TextField(null=True)
     payment_method=models.TextField(default="Cash")
     branch=models.ForeignKey(Branch,on_delete=models.CASCADE,null=True)
     file=models.FileField(null=True)
@@ -234,6 +233,7 @@ class Receipt(Transaction):
     debited=models.BooleanField(default=False)
     on_account=models.BooleanField(default=False)
     change_given=models.BooleanField(default=True)
+
     def todict(self):
         payment_method=self.payment_method
         mobile_methods=["Ecocash','OneMoney','InnBucks','Mukuru','Telecash"]

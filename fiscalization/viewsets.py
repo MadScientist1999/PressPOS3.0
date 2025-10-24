@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
 from django.forms.models import model_to_dict
+from django.http import HttpResponse
 from main.settings import HTML_ROOT   
 from django.db import transaction
 from django.db.models import Prefetch
@@ -12,7 +13,12 @@ from decimal import Decimal, ROUND_HALF_UP
 from main.models import User
 from .encryption import *
 from django.db.models import F
-
+import qrcode
+import json
+from django.db.models import F
+from pos.models import TransactionStock
+from collections import defaultdict
+     
 @method_decorator(cache_page(60), name='list')
 class FiscalReceiptViewSet(viewsets.ModelViewSet):
     serializer_class = FiscalReceiptSerializer            
@@ -32,8 +38,8 @@ class FiscalReceiptViewSet(viewsets.ModelViewSet):
         receipt_lines = []
         receiptTaxes = []
         # Save receipt first
-        receipt = serializer.save(user=user, branch=branch)
-
+        receipt = serializer.save(user=user, fiscal_branch=branch)
+       
         # Auto-generate invoiceNo using PK
         receipt.invoiceNo = f"FI{receipt.pk}"
         
@@ -123,7 +129,7 @@ class FiscalReceiptViewSet(viewsets.ModelViewSet):
             receipt_lines.append(product.productJsonBody(i, branch.production))
         # --- Construct comment ---
         product_summary = ", ".join(product_lines) if product_lines else "No products listed"
-
+     
         
         # Totals
         receipt.subtotal = exc_total
@@ -141,7 +147,7 @@ class FiscalReceiptViewSet(viewsets.ModelViewSet):
         receipt.date = date_str
         receipt.time = time_str
         customer_name = getattr(receipt.customer, "name", "Unknown Customer")
-        branch_name = getattr(receipt.branch, "name", "Unknown Branch")
+        branch_name = getattr(receipt.fiscal_branch, "name", "Unknown Branch")
         currency_code = getattr(receipt.currency, "code", "Unknown")
         salesamountwithtax=receipt.Total15VAT
         
@@ -238,6 +244,8 @@ class FiscalReceiptViewSet(viewsets.ModelViewSet):
         receipt.md5_hash = md5_hash_16
         receipt.receiptGlobalNo = globalNo
         receipt.receiptCounter = openday.counter
+        receipt.branch=Branch.objects.get(id=branch.id)
+        receipt.receiptHash=receipt_hash_base64
         OpenDay.objects.filter(id=openday.id).update(
             counter=F("counter") + 1,
             previousReceiptHash=receipt_hash_base64
@@ -267,7 +275,17 @@ class FiscalReceiptViewSet(viewsets.ModelViewSet):
             )
         receipt.comment = comment
         receipt.jsonBody = jsonBody
-        receipt.save(update_fields=["subtotal", "tax", "total", "Total15VAT", "TotalNonVAT", "TotalExempt", "date", "time","comment"])
+        qr = qrcode.QRCode(
+          version=1,  # Controls the size (1 = smallest, 40 = largest)
+          error_correction=qrcode.constants.ERROR_CORRECT_L,  # Low error correction
+          box_size=4,  # Size of each QR box
+          border=1,  # Border thickness
+          )
+        qr.add_data(receipt.qrurl)
+        qr.make(fit=True)
+        img = qr.make_image(fill="black", back_color="white")
+        img.save(f"{HTML_ROOT}/{receipt.invoiceNo}.png")
+        receipt.qrcode=f"{HTML_ROOT}/{receipt.invoiceNo}.png"
         receipt_stock_objects = [
         TransactionStock(
         transaction=receipt,
@@ -307,19 +325,19 @@ class FiscalCreditViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         original_receipt_id = request.data.get("id")
         receipt = FiscalReceipt.objects.get(id=original_receipt_id)
+        if receipt.credited:
+            return HttpResponse(status=500)
         reason = request.data.get("reason", "")
         import django.utils.timezone as timezone
         
-        now=timezone.now().isoformat(timespec='seconds')
+        now=timezone.now().isoformat(timespec='seconds').split("+")[0]
         date_str, time_str = now.split("T")
         # Convert original receipt to a dict
+        openday = OpenDay.objects.filter(open=True, branch=receipt.branch).last()
         receipt_dict = model_to_dict(
             receipt,
-            exclude=["id", "invoiceNo", "receipt_type", "receiptCredited","transaction_ptr","products"]
+            exclude=["id", "invoiceNo","receipt_ptr","branch", "receipt_type", "credited","transaction_ptr","products","signature","receiptGlobalNo","receiptCounter","day","submitted","verified","verified_at","errors","debited","qrcode","md5_hash","serverResponse","signature","receiptHash","receiptJsonbody","qrurl"]
         )
-        
-        receipt.credited=True
-        receipt.save()
         # Extract details for comment
         customer_name = getattr(receipt.customer, "name", "Unknown Customer")
         product_summary = ", ".join([p.product.name for p in receipt.products.all()])
@@ -327,18 +345,22 @@ class FiscalCreditViewSet(viewsets.ModelViewSet):
         currency_code = getattr(receipt.currency, "code", "Unknown Currency")
         payment_method = getattr(receipt, "payment_method", "Unknown Method")
         user_name = receipt.user.username
+        
         # Override only the fields specific to credit
         receipt_dict.update({
-            "invoiceNo": f"FC{receipt.invoiceNo.replace('IN','')}",
-            "receipt_type": "CREDIT NOTE",
-            "receiptCredited": receipt,
+            "invoiceNo": f"FC{receipt.invoiceNo.replace('FI','')}",
+            "receipt_type": "DEBIT NOTE",
+            "fiscal_receipt": receipt,
+            "receiptGlobalNo":receipt.fiscal_branch.globalNo,
+            "receiptCounter":openday.counter,
             "reason": reason,
-            "comment": reason,
+            "day":openday,
             "date":date_str,
             "time":time_str,
             "currency": receipt.currency,
             "user": User.objects.last(),
-            "branch": receipt.branch,
+            "fiscal_branch": receipt.fiscal_branch,
+            "branch":receipt.branch,
             "comment": (
             f"On {date_str} at {time_str}, {customer_name} was issued a credit note for {product_summary} "
             f"at the {branch_name} branch. "
@@ -354,13 +376,93 @@ class FiscalCreditViewSet(viewsets.ModelViewSet):
             f"This credit note fully references the original receipt (ID: {receipt.id})."
             )
         })
-          
-        
+        print(receipt_dict)
         # Create Credit dynamically
         credit = FiscalCredit.objects.create(**receipt_dict)
-        # Copy products
         
+        receiptJsonBody=json.loads(receipt.receiptJsonbody)["receipt"]
+        for tax_line in receiptJsonBody["receiptTaxes"]:
+            tax_line["SalesAmountwithTax"]*=-1
+            tax_line["taxAmount"]=float(tax_line['taxAmount'])*-1
+        receiptJsonBody["receiptPayments"][0]["paymentAmount"]=f"{-1*float(receiptJsonBody['receiptPayments'][0]['paymentAmount'])}"    
+        for receiptLine in receiptJsonBody["receiptLines"]:
+          receiptLine["receiptLineTotal"]=receiptLine['receiptLineTotal']*-1
+          receiptLine["receiptLinePrice"]=f"{float(receiptLine['receiptLinePrice'])*-1}"
+        try:
+          creditJson={"creditDebitNote":{"receiptGlobalNo":f"{receipt.receiptGlobalNo}","fiscalDayNo":f"{receipt.day.FiscalDayNo}","receiptID":f"{json.loads(receipt.serverResponse)['receiptID']}","deviceID":receipt.fiscal_branch.device_id},"receiptLines":receiptJsonBody["receiptLines"],"receiptTaxes":receiptJsonBody["receiptTaxes"],"receiptNotes":reason,"receiptTotal":-1*receiptJsonBody["receiptTotal"],"receiptLinesTaxInclusive":True,"invoiceNo":credit.invoiceNo,"receiptCurrency":credit.currency.symbol,"receiptPrintForm":"InvoiceA4" if receipt.isA4 else "Receipt48","receiptType":"CREDITNOTE","receiptGlobalNo":credit.receiptGlobalNo,"receiptDate":now,"receiptPayments":receiptJsonBody["receiptPayments"]}
+        except Exception as e:
+          print(str(e))  
+        if not receipt.customer is None:
+         print(receipt.customer.name)
+         creditJson["buyerData"]={"VATNumber": receipt.customer.vat_number, "buyerTradeName": receipt.customer.tradename, "buyerTIN": receipt.customer.tin_number, "buyerRegisterName": receipt.customer.name,"buyerAddress":{"province":receipt.customer.province,"city":receipt.customer.city,"houseNo":receipt.customer.address,"street":receipt.customer.street},"buyerContacts":{"phoneNo":receipt.customer.phone_number,"email":receipt.customer.email}} 
+        tax_lines=creditJson["receiptTaxes"]
+        tax_lines_concat=""
+
+        for taxline in tax_lines:
+            try:
+                taxPercentForConcat = "15.00" if float(taxline.get("taxPercent", 0)) == 15.0 else "0.00"
+                print(taxPercentForConcat)
+                tax_lines_concat += (
+                f"{taxline['taxCode']}"
+                f"{taxPercentForConcat}"
+                f"{round(float(taxline['taxAmount']) * 100)}"
+                f"{round(float(taxline['SalesAmountwithTax']) * 100)}"
+            )
+            except Exception as e:
+                tax_lines_concat += f"{taxline['taxCode']}0{round(float(taxline.get('SalesAmountwithTax', 0)) * 100)}"
+                print(str(e))
+
+        type="CREDITNOTE"
+        total=int(float(receipt.total)*-100)
+        
+        credit.result_string = f"{credit.fiscal_branch.device_id}{type}{credit.currency.symbol}{credit.receiptGlobalNo}{now}{total}{tax_lines_concat}{credit.day.previousReceiptHash}"
+        credit.signature=sign_data(credit.fiscal_branch,credit.result_string)
+        receipt_hash_base64=hash_data(credit.result_string)
+        credit.receiptHash=receipt_hash_base64
+        md5_hash=get_first16chars_of_signature(credit.signature)
+        credit.md5_hash=md5_hash[:16]
+        creditJson["receiptDeviceSignature"]={"signature":credit.signature,"hash":receipt_hash_base64}     
+        creditJson["receiptCounter"]=credit.receiptCounter
+        credit.receiptJsonbody=creditJson
         credit.products.set(receipt.products.all())
+        OpenDay.objects.filter(id=openday.id).update(
+            counter=F("counter") + 1,
+            previousReceiptHash=receipt_hash_base64
+            )
+        FiscalBranch.objects.filter(id=credit.fiscal_branch.id).update(
+            globalNo=F("globalNo") + 1,
+        )
+        
+        Receipt.objects.filter(id=receipt.id).update(
+            credited=True
+            )
+    
+        year, month, day = now.split("-")
+          
+        
+        
+        # Copy products
+        credit.qrurl=f"https://{'fdms' if credit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{credit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{credit.receiptGlobalNo:010}{credit.md5_hash_16}"
+        credit.products.set(receipt.products.all())
+        qr = qrcode.QRCode(
+          version=1,  # Controls the size (1 = smallest, 40 = largest)
+          error_correction=qrcode.constants.ERROR_CORRECT_L,  # Low error correction
+          box_size=4,  # Size of each QR box
+          border=1,  # Border thickness
+          )
+        qr.add_data(credit.qrurl)
+        qr.make(fit=True)
+        img = qr.make_image(fill="black", back_color="white")
+        img.save(f"{HTML_ROOT}/{credit.invoiceNo}.png")
+        credit.qrcode=f"{HTML_ROOT}/{credit.invoiceNo}.png"
+        stock_increments = defaultdict(int)
+        for ts in TransactionStock.objects.filter(transaction=receipt).select_related("stock"):
+            stock_increments[ts.stock_id] += ts.quantity
+
+        # Bulk update stocks
+        for stock_id, qty in stock_increments.items():
+            Stock.objects.filter(id=stock_id).update(quantity=F('quantity') + qty)
+            # Get or create currency
         from pos.utils import generate_document_pdf
         return generate_document_pdf(credit)
 
@@ -386,44 +488,48 @@ class FiscalDebitViewSet(viewsets.ModelViewSet):
     serializer_class = FiscalDebitSerializer
     @transaction.atomic
     def create(self, request, *args, **kwargs):
-       
         original_receipt_id = request.data.get("id")
         receipt = FiscalReceipt.objects.get(id=original_receipt_id)
+        if receipt.debited:
+            return HttpResponse(status=500)
         reason = request.data.get("reason", "")
         import django.utils.timezone as timezone
         
-        now=timezone.now().isoformat(timespec='seconds')
+        now=timezone.now().isoformat(timespec='seconds').split("+")[0]
         date_str, time_str = now.split("T")
         # Convert original receipt to a dict
+        openday = OpenDay.objects.filter(open=True, branch=receipt.branch).last()
         receipt_dict = model_to_dict(
             receipt,
-            exclude=["id", "invoiceNo", "receipt_type", "receiptCredited","transaction_ptr","products"]
+            exclude=["id", "invoiceNo","receipt_ptr","branch", "receipt_type", "credited","transaction_ptr","products","signature","receiptGlobalNo","receiptCounter","day","submitted","verified","verified_at","errors","debited","qrcode","md5_hash","serverResponse","signature","receiptHash","receiptJsonbody","qrurl"]
         )
-        receipt.debited=True
-        receipt.save()
         # Extract details for comment
         customer_name = getattr(receipt.customer, "name", "Unknown Customer")
         product_summary = ", ".join([p.product.name for p in receipt.products.all()])
         branch_name = getattr(receipt.branch, "name", "Unknown Branch")
         currency_code = getattr(receipt.currency, "code", "Unknown Currency")
         payment_method = getattr(receipt, "payment_method", "Unknown Method")
+        user_name = receipt.user.username
         
         # Override only the fields specific to credit
         receipt_dict.update({
-            "invoiceNo": f"FD{receipt.invoiceNo.replace('IN','')}",
-            "receiptDebited": receipt,
+            "invoiceNo": f"FD{receipt.invoiceNo.replace('FI','')}",
+            "receipt_type": "CREDIT NOTE",
+            "fiscal_receipt": receipt,
+            "receiptGlobalNo":receipt.fiscal_branch.globalNo,
+            "receiptCounter":openday.counter,
             "reason": reason,
-            "receipt_type": "DEBIT NOTE",
-            "comment": reason,
+            "day":openday,
             "date":date_str,
             "time":time_str,
             "currency": receipt.currency,
             "user": User.objects.last(),
-            "branch": receipt.branch,
+            "fiscal_branch": receipt.fiscal_branch,
+            "branch":receipt.branch,
             "comment": (
             f"On {date_str} at {time_str}, {customer_name} was issued a debit note for {product_summary} "
             f"at the {branch_name} branch. "
-            f"The debit note (Invoice No: {receipt.invoiceNo}) was processed by {receipt.user.username}. "
+            f"The debit note (Invoice No: {receipt.invoiceNo}) was processed by {user_name}. "
             f"The transaction was recorded in {currency_code} currency, with a payment adjustment of "
             f"{getattr(receipt, 'payment', 0)} applied via {payment_method}. "
             f"The total tax adjustment amounted to {getattr(receipt, 'tax', 0)}. "
@@ -433,13 +539,83 @@ class FiscalDebitViewSet(viewsets.ModelViewSet):
             f"bringing the inclusive total to {getattr(receipt, 'total', 0)}. "
             f"The profit before tax was {getattr(receipt, 'profitBT', 0)}, and after tax was {getattr(receipt, 'profitAT', 0)}. "
             f"This debit note fully references the original receipt (ID: {receipt.id})."
-        )
-          
+            )
         })
+        print(receipt_dict)
         # Create Credit dynamically
         debit = FiscalDebit.objects.create(**receipt_dict)
-        # Copy products
+        
+        receiptJsonBody=json.loads(receipt.receiptJsonbody)["receipt"]
+        try:
+          debitJson={"creditDebitNote":{"receiptGlobalNo":f"{receipt.receiptGlobalNo}","fiscalDayNo":f"{receipt.day.FiscalDayNo}","receiptID":f"{json.loads(receipt.serverResponse)['receiptID']}","deviceID":receipt.fiscal_branch.device_id},"receiptLines":receiptJsonBody["receiptLines"],"receiptTaxes":receiptJsonBody["receiptTaxes"],"receiptNotes":reason,"receiptTotal":receiptJsonBody["receiptTotal"],"receiptLinesTaxInclusive":True,"invoiceNo":debit.invoiceNo,"receiptCurrency":debit.currency.symbol,"receiptPrintForm":"InvoiceA4" if receipt.isA4 else "Receipt48","receiptType":"DEBITNOTE","receiptGlobalNo":debit.receiptGlobalNo,"receiptDate":now,"receiptPayments":receiptJsonBody["receiptPayments"]}
+        except Exception as e:
+          print(str(e))  
+        if not receipt.customer is None:
+         print(receipt.customer.name)
+         debitJson["buyerData"]={"VATNumber": receipt.customer.vat_number, "buyerTradeName": receipt.customer.tradename, "buyerTIN": receipt.customer.tin_number, "buyerRegisterName": receipt.customer.name,"buyerAddress":{"province":receipt.customer.province,"city":receipt.customer.city,"houseNo":receipt.customer.address,"street":receipt.customer.street},"buyerContacts":{"phoneNo":receipt.customer.phone_number,"email":receipt.customer.email}} 
+        tax_lines=debitJson["receiptTaxes"]
+        tax_lines_concat=""
+
+        for taxline in tax_lines:
+            try:
+                taxPercentForConcat = "15.00" if float(taxline.get("taxPercent", 0)) == 15.0 else "0.00"
+                print(taxPercentForConcat)
+                tax_lines_concat += (
+                f"{taxline['taxCode']}"
+                f"{taxPercentForConcat}"
+                f"{round(float(taxline['taxAmount']) * 100)}"
+                f"{round(float(taxline['SalesAmountwithTax']) * 100)}"
+            )
+            except Exception as e:
+                tax_lines_concat += f"{taxline['taxCode']}0{round(float(taxline.get('SalesAmountwithTax', 0)) * 100)}"
+                print(str(e))
+
+        type="DEBITNOTE"
+        total=int(float(receipt.total)*-100)
+        
+        debit.result_string = f"{debit.fiscal_branch.device_id}{type}{debit.currency.symbol}{debit.receiptGlobalNo}{now}{total}{tax_lines_concat}{debit.day.previousReceiptHash}"
+        
+        debit.signature=sign_data(debit.fiscal_branch,debit.result_string)
+        receipt_hash_base64=hash_data(debit.result_string)
+        debit.receiptHash=receipt_hash_base64
+        md5_hash=get_first16chars_of_signature(debit.signature)
+        debit.md5_hash=md5_hash[:16]
+        debitJson["receiptDeviceSignature"]={"signature":debit.signature,"hash":receipt_hash_base64}     
+        debitJson["receiptCounter"]=debit.receiptCounter
+        debit.receiptJsonbody=debitJson
         debit.products.set(receipt.products.all())
+        
+        OpenDay.objects.filter(id=openday.id).update(
+            counter=F("counter") + 1,
+            previousReceiptHash=receipt_hash_base64
+            )
+        FiscalBranch.objects.filter(id=debit.fiscal_branch.id).update(
+            globalNo=F("globalNo") + 1,
+        )
+        
+        Receipt.objects.filter(id=receipt.id).update(
+            debited=True
+            )
+    
+        year, month, day = now.split("-")
+          
+        
+        
+        # Copy products
+        debit.qrurl=f"https://{'fdms' if debit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{debit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{debit.receiptGlobalNo:010}{debit.md5_hash_16}"
+        debit.products.set(receipt.products.all())
+        qr = qrcode.QRCode(
+          version=1,  # Controls the size (1 = smallest, 40 = largest)
+          error_correction=qrcode.constants.ERROR_CORRECT_L,  # Low error correction
+          box_size=4,  # Size of each QR box
+          border=1,  # Border thickness
+          )
+        qr.add_data(debit.qrurl)
+        qr.make(fit=True)
+        img = qr.make_image(fill="black", back_color="white")
+        img.save(f"{HTML_ROOT}/{debit.invoiceNo}.png")
+        debit.qrcode=f"{HTML_ROOT}/{debit.invoiceNo}.png"
+        
         from pos.utils import generate_document_pdf
         return generate_document_pdf(debit)
      

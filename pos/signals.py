@@ -78,26 +78,11 @@ def clear_quotation_cache(sender, **kwargs):
 @receiver(post_save, sender=Debit)
 @receiver(post_save, sender=Purchase)
 def handle_fiscal_receipt_or_credit(sender, instance, created, **kwargs):
-    
+   
     if not created:
         # Run stock adjustment in a background thread
         return  # Only act on new unsubmitted instances
- 
-    from django.db.models import F
-    from .models import TransactionStock
-    from collections import defaultdict
-    
-    if sender.__name__=="Credit":
-        # Aggregate quantity per stock
-        stock_increments = defaultdict(int)
-        for ts in TransactionStock.objects.filter(transaction=instance.receiptCredited).select_related("stock"):
-            stock_increments[ts.stock_id] += ts.quantity
 
-        # Bulk update stocks
-        for stock_id, qty in stock_increments.items():
-            Stock.objects.filter(id=stock_id).update(quantity=F('quantity') + qty)
-            # Get or create currency
-    
     currency=instance.currency
     multiplier = -1 if sender.__name__ == "Credit" or sender.__name__ =="Purchase"  else 1
             

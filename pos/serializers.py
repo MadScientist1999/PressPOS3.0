@@ -242,7 +242,7 @@ class ReceiptSerializer(serializers.ModelSerializer):
             "invoiceNo", "payment_method", "items", "isA4", "receipt_type",
              "on_account", "change_given", "payment", "comment",
              # new ones ↓
-             "branch", "user", "invoiceItems", "Total15VAT", "TotalNonVAT",
+             "branch", "user", "Total15VAT", "TotalNonVAT",
              "TotalExempt", "profitBT", "profitAT", "date", "time"
         ]
 

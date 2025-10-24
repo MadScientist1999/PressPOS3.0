@@ -17,6 +17,10 @@ from django.db.models import F, DecimalField, Value, ExpressionWrapper
 from django.forms.models import model_to_dict
 import os
 import barcode
+from django.db.models import F
+from .models import TransactionStock
+from collections import defaultdict
+     
 from main.settings import HTML_ROOT
 from barcode.writer import ImageWriter
 from .saver import saveLabel
@@ -155,8 +159,7 @@ class ReceiptViewSet(viewsets.ModelViewSet):
 
         # Auto-generate invoiceNo using PK
         receipt.invoiceNo = f"IN{receipt.pk}"
-        receipt.save(update_fields=["invoiceNo"])
-
+        
         # Process products
         product_ids = [item["product_id"] for item in items]
         non_services = list(NonService.objects.filter(id__in=product_ids))
@@ -278,8 +281,6 @@ class ReceiptViewSet(viewsets.ModelViewSet):
             f"The profit before tax was {getattr(receipt, 'profitBT', 0)}, and after tax was {getattr(receipt, 'profitAT', 0)}."
             )
         receipt.comment = comment
-        receipt.save(update_fields=["subtotal", "tax", "total", "Total15VAT", "TotalNonVAT", "TotalExempt", "date", "time","comment"])
-        
         receipt_stock_objects = [
         TransactionStock(
         transaction=receipt,
@@ -329,7 +330,7 @@ class PurchaseViewSet(viewsets.ModelViewSet):
         # Save purchase first
         purchase = serializer.save(user=user, branch=branch, currency=currency, supplier=supplier)
         purchase.invoiceNo = f"SP{purchase.pk}"
-        purchase.save(update_fields=["invoiceNo"])
+        
 
         import django.utils.timezone as timezone
         now = timezone.localtime().isoformat(timespec='seconds').split("+")[0]
@@ -426,8 +427,7 @@ class PurchaseViewSet(viewsets.ModelViewSet):
             f"The subtotal before tax was {purchase.subtotal}, bringing the total to {purchase.total}. "
             f"The profit before tax was {getattr(purchase, 'profitBT', 0)}, after tax was {getattr(purchase, 'profitAT', 0)}."
         )
-        purchase.save()
-
+        
         from .utils import generate_document_pdf
         return generate_document_pdf(purchase)
 
@@ -550,8 +550,7 @@ class QuotationViewSet(viewsets.ModelViewSet):
 
         # Auto-generate invoiceNo using PK
         quotation.invoiceNo = f"QT{quotation.pk}"
-        quotation.save(update_fields=["invoiceNo"])
-
+       
         # Process items
         exc_total = Decimal("0.0000")
         tax_total = Decimal("0.0000")
@@ -602,6 +601,7 @@ class QuotationViewSet(viewsets.ModelViewSet):
                     "total": product.product_total,
                 }  
             )
+            
             quotation.products.add(receiptItem)
 
         inc_total = exc_total + tax_total
@@ -632,8 +632,7 @@ class QuotationViewSet(viewsets.ModelViewSet):
             f"Of this, {quotation.Total15VAT} is taxed at 15%, {quotation.TotalNonVAT} at 0%, "
             f"and {quotation.TotalExempt} is tax-exempt."
         )
-        quotation.save(update_fields=["subtotal", "Total15VAT", "TotalNonVAT", "TotalExempt", "tax", "total", "invoiceItems"])
-
+        
         # Optionally: generate PDF
         # You can call your `save()` function here if needed and attach to quotation.file
         # 🧾 Generate PDF after saving quotation
@@ -676,7 +675,10 @@ class CreditViewSet(viewsets.ModelViewSet):
         )
         
         receipt.credited=True
-        receipt.save()
+        Receipt.objects.filter(id=receipt.id).update(
+            credited=True
+            )
+        
         # Extract details for comment
         customer_name = getattr(receipt.customer, "name", "Unknown Customer")
         product_summary = ", ".join([p.product.name for p in receipt.products.all()])
@@ -718,6 +720,15 @@ class CreditViewSet(viewsets.ModelViewSet):
         # Copy products
         
         credit.products.set(receipt.products.all())
+       
+        stock_increments = defaultdict(int)
+        for ts in TransactionStock.objects.filter(transaction=receipt).select_related("stock"):
+            stock_increments[ts.stock_id] += ts.quantity
+
+        # Bulk update stocks
+        for stock_id, qty in stock_increments.items():
+            Stock.objects.filter(id=stock_id).update(quantity=F('quantity') + qty)
+            # Get or create currency
         from .utils import generate_document_pdf
         return generate_document_pdf(credit)
 
@@ -756,8 +767,9 @@ class DebitViewSet(viewsets.ModelViewSet):
             receipt,
             exclude=["id", "invoiceNo", "receipt_type", "receiptCredited","transaction_ptr","products"]
         )
-        receipt.debited=True
-        receipt.save()
+        Receipt.objects.filter(id=receipt.id).update(
+            debited=True
+            )
         # Extract details for comment
         customer_name = getattr(receipt.customer, "name", "Unknown Customer")
         product_summary = ", ".join([p.product.name for p in receipt.products.all()])

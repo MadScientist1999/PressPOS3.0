@@ -537,11 +537,11 @@ footer {
     </div>
    
      <!-- QR code and verification info on the right, next to banking details -->
-    {% if qrurl %}
+    {% if transaction.qrcode.path%}
     <tr>
       <td>
     <div class="qr-section">
-      <img src="{{ transaction.qrurl}}" alt="QR Code">
+      <img src={{transaction.qrcode.path}} alt="QR Code">
       <div class="qr-text">
       </td>
         <td>
@@ -551,10 +551,10 @@ footer {
 
         <p class="whitespace-nowrap text-slate-400 text-left">ID: {{ transaction.fiscal_branch.device_id }}</p>
     
-        <p class="whitespace-nowrap text-slate-400 text-left">Inv #: {{ transaction.globalNo }}</p>
+        <p class="whitespace-nowrap text-slate-400 text-left">Inv #: {{ transaction.receiptGlobalNo }}</p>
        
        
-        <p class="whitespace-nowrap text-slate-400 text-left">Day: {{ FiscalDay }}</p>
+        <p class="whitespace-nowrap text-slate-400 text-left">Day: {{ transaction.day.FiscalDayNo }}</p>
         </td>
       </div>
     </div>

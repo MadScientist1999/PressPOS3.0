@@ -57,6 +57,9 @@ router.register(r'reportentries', ReportEntryViewSet)
 router.register(r'ingredients', IngredientViewSet)
 router.register(r'recipes', RecipeViewSet,basename="recipes")
 router.register(r'fiscalreceipts',FiscalReceiptViewSet,basename="fiscalreceipts")
+router.register(r'fiscalcredits',FiscalCreditViewSet,basename="fiscalcredits")
+router.register(r'fiscaldebits',FiscalDebitViewSet,basename="fiscaldebits")
+
 
 
 other_patterns=[

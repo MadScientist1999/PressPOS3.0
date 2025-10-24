@@ -104,7 +104,7 @@ body {
   <div class="container">
     <!-- Header Section -->
     <div class="header">
-      {%if logo%}}
+      {%if transaction.branch.logo%}}
       <div class="logo">
 
         <img src={{transaction.branch.logo}} alt="Company Logo" height="40">
@@ -228,15 +228,15 @@ body {
     </div>
     
     <!-- Footer Section -->
-  {% if qrurl %}
+  {% if transaction.qrcode %}
   <div class="qr-container">
-    <img src="{{ qrpath }}" alt="QR Code">
+    <img src="{{ transaction.qrcode.path}}" alt="QR Code">
     <div class="qr-text">
-      <p><strong>Verification Code:</strong> {{ verificationCode }}</p>
-      <p>Verify at:<br><a href="{{ qrurl }}" target="_blank">{{ qrurl }}</a></p>
-      <p>Device ID: {{ deviceID }}</p>
-      <p>Invoice #: {{ globalNo }}</p>
-      <p>Fiscal Day: {{ FiscalDay }}</p>
+      <p><strong>Verification Code:</strong> {{ transaction.md5_hash }}</p>
+      <p>Verify at:<br><a href="{{ transaction.qrurl }}" target="_blank">{{ ttansaction.qrurl }}</a></p>
+      <p>Device ID: {{ transaction.fiscal_branch.device_id }}</p>
+      <p>Invoice #: {{ transaction.receiptGlobalNo }}</p>
+      <p>Fiscal Day: {{ transaction.day.FiscalDayNo }}</p>
     </div>
   </div>
   {% endif %}
@@ -747,17 +747,27 @@ footer {
                 {%elif transaction.receipt_type == "CREDIT NOTE"%}
                 <td>
                 <p class="whitespace-nowrap text-slate-400 text-right">Credit #</p>
-                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ invoiceNo }}</p>
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.invoiceNo }}</p>
                 <p class="whitespace-nowrap text-slate-400 text-right">Reference #</p>
-                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ referenceNo }}</p>
-                <p class="whitespace-nowrap font-bold text-main text-right" id="reason">Reason:{{reason}}</p>
+                {%if transaction.receipt%}
+                
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.receipt.invoiceNo }}</p>
+                {%else%}
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.fiscal_receipt.invoiceNo }}</p>
+                {%endif%}
+                <p class="whitespace-nowrap font-bold text-main text-right" id="reason">Reason:{{transaction.reason}}</p>
                </td>
                 {%elif transaction.receipt_type == "DEBIT NOTE"%}
                 <td>
                 <p class="whitespace-nowrap text-slate-400 text-right">Debit #</p>
                 <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.invoiceNo }}</p>
                 <p class="whitespace-nowrap text-slate-400 text-right">Reference #</p>
-                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.referenceNo }}</p>
+                {%if transaction.receipt%}
+                
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.receipt.invoiceNo }}</p>
+                {%else%}
+                <p class="whitespace-nowrap font-bold text-main text-right" id="invoiceNo">{{ transaction.fiscal_receipt.invoiceNo }}</p>
+                {%endif%}
                 <p class="whitespace-nowrap font-bold text-main text-right" id="reason">Reason:{{ transaction.reason }}</p>
                 </td>
                 {%elif transaction.receipt_type == "QUOTATION"%}

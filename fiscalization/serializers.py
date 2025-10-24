@@ -21,13 +21,13 @@ class FiscalCreditSerializer(FiscalReceiptSerializer):
     class Meta(FiscalReceiptSerializer.Meta):
         model = FiscalCredit
         fields = FiscalReceiptSerializer.Meta.fields + [
-            "receiptCredited",
+            
             "reason",
         ]
 class FiscalDebitSerializer(FiscalReceiptSerializer):
     class Meta(FiscalReceiptSerializer.Meta):
         model = FiscalDebit
         fields = FiscalReceiptSerializer.Meta.fields + [
-            "receiptDebited",
+            
             "reason",
         ]

@@ -30,12 +30,6 @@ fisc_urlpatterns = [
     path('close_day/', views.close_day_view),
     path('open_day/',views.open_day_view),
     path('submit_missing',signals.submitAll),
-    path('admin/', views.close_day_view),
-    path("make_fiscal_sale/",views.make_fiscal_sale),
-    path("remake_fiscal_invoice/<int:receipt_id>/",remake.remake_fiscal_invoice),
-    
-    path("credit_fiscal_sale/<int:receipt_id>/",views.credit_fiscal_sale),
-    path("debit_fiscal_sale/<int:receipt_id>/",views.debit_fiscal_sale),
     path('time_to_close/', other.time_to_close),
     
 ]

@@ -232,12 +232,14 @@ def fiscal_post_migrate(sender, **kwargs):
 @receiver(post_save, sender=FiscalCredit)
 @receiver(post_save, sender=FiscalDebit)
 def handle_fiscal_receipt_or_credit(sender, instance, created, **kwargs):
+    print("fiscal_receipt_post")
+    print(instance.signature)
     if instance.submited:
         return  # Only act on new unsubmitted instances
     if instance.signature is None:
         return  # Cannot process without a signature
     branch = instance.fiscal_branch
-    
+    print("This is an impoerANT ARE")
     if branch.name not in processing_locks:
         processing_locks[branch.name] = threading.Lock()
     if branch.name not in processing_threads or not processing_threads[branch.name].is_alive():
