@@ -1171,7 +1171,295 @@ class RecipeViewSet(viewsets.ModelViewSet):
         except Exception as e:
             print("Error assembling recipe:", e)
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-@method_decorator(cache_page(60), name='list')
+from decimal import Decimal, ROUND_HALF_UP
+import json
+import os
+from io import BytesIO
+
+from django.utils import timezone
+from django.db import transaction
+from django.db.models import Prefetch
+from django.http import FileResponse
+
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+
+from .models import (
+    Branch,
+    NonService,
+    Service,
+    Stock,
+    StockTransfer,
+    TransactionStock,
+    ReceiptItem,
+)
+
 class StockTransferViewSet(viewsets.ModelViewSet):
     queryset = StockTransfer.objects.all()
     serializer_class = StockTransferSerializer
+
+    @transaction.atomic
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        validated = serializer.validated_data
+
+        items = validated.pop("items", [])  # expected list of dicts with product_id, quantity, selling_price, product_name...
+        to_branch = validated.get("destination") or validated.get("to_branch")  # adapt to your serializer field name
+        user = request.user
+        from_branch_id = request.session.get("branch")
+        if not from_branch_id:
+            return Response({"error": "Source branch not in session"}, status=status.HTTP_400_BAD_REQUEST)
+
+        from_branch = Branch.objects.filter(id=from_branch_id).first()
+        if not from_branch or not to_branch:
+            return Response({"error": "Branch not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        if not items:
+            return Response({"error": "No items to transfer"}, status=status.HTTP_400_BAD_REQUEST)
+
+        now = timezone.localtime()
+        now_iso = now.isoformat(timespec="seconds")
+        date_str, time_str = now_iso.split("T")
+
+        # Build product map and load product objects
+        product_ids = [int(i["product_id"]) for i in items if "product_id" in i]
+        non_services = list(NonService.objects.filter(id__in=product_ids))
+        services = list(Service.objects.filter(id__in=product_ids))
+        product_map = {p.id: p for p in (non_services + services)}
+
+        # Prefetch source stocks for relevant non-services (branch-limited)
+        stock_qs = Stock.objects.filter(branch=from_branch, quantity__gt=0).order_by("id")
+        non_services_prefetched = list(
+            NonService.objects.filter(id__in=[ns.id for ns in non_services])
+            .prefetch_related(Prefetch("stock", queryset=stock_qs, to_attr="prefetched_stock"))
+        )
+
+        # Flatten stock entries and dedupe
+        all_stock_entries = []
+        for ns in non_services_prefetched:
+            all_stock_entries.extend(getattr(ns, "prefetched_stock", []))
+        stock_map_by_id = {s.id: s for s in all_stock_entries}
+        all_stock_entries = list(stock_map_by_id.values())
+        stock_ids = list(stock_map_by_id.keys())
+
+        # Lock stock rows for update
+        locked_stock_map = {}
+        if stock_ids:
+            locked = list(Stock.objects.select_for_update().filter(id__in=stock_ids))
+            locked_stock_map = {s.id: s for s in locked}
+
+        # available quantities
+        stock_available = {sid: Decimal(str(locked_stock_map[sid].quantity)) for sid in locked_stock_map}
+
+        # trackers
+        stock_deductions = {}     # stock_id -> Decimal deducted
+        updated_stocks = []       # source stocks to bulk_update
+        stocks_to_create = []     # new Stock objects for destination
+        used_stock_entries = []   # (source_stock_instance, Decimal deducted)
+
+        # totals and product list for PDF/comment
+        exc_total = Decimal("0.00000")
+        tax_total = Decimal("0.00000")
+        products_for_totals = []
+        product_lines_for_comment = []
+        receipt_items_created = []
+
+        # First pass: compute VAT/subtotals/totals and plan stock deductions
+        for item in items:
+            pid = int(item.get("product_id"))
+            qty = Decimal(str(item.get("quantity", 1)))
+            product = product_map.get(pid)
+            if not product:
+                # skip unknown product
+                continue
+
+            # selling price: prefer provided else product.selling_price
+            sp = Decimal(str(item.get("selling_price", getattr(product, "selling_price", "0"))))
+            product.selling_price = sp
+
+            # VAT logic (matches your second snippet)
+            tax_field = getattr(product, "tax", "Exempt")
+            if str(tax_field) == "15":
+                product.vat = (sp * Decimal("0.15") / Decimal("1.15")).quantize(MONEY_PREC, rounding=ROUNDING)
+                product.taxExclusive = (sp / Decimal("1.15")).quantize(MONEY_PREC, rounding=ROUNDING)
+            elif str(tax_field) == "0":
+                product.vat = Decimal("0.00000")
+                product.taxExclusive = sp
+            else:
+                product.vat = Decimal("0.00000")
+                product.taxExclusive = sp
+
+            product.quantity = qty
+            product.product_total = (sp * qty).quantize(MONEY_PREC, rounding=ROUNDING)
+            product.product_vat = (product.vat * qty).quantize(MONEY_PREC, rounding=ROUNDING)
+            product.product_subtotal = (product.taxExclusive * qty).quantize(MONEY_PREC, rounding=ROUNDING)
+
+            exc_total += product.product_subtotal
+            tax_total += product.product_vat
+            products_for_totals.append(product)
+
+            pname = item.get("product_name", getattr(product, "name", f"Product {pid}"))
+            product_lines_for_comment.append(f"{qty} × {pname} at {sp} each")
+
+            # Plan stock deductions if NonService
+            if isinstance(product, NonService):
+                qty_left = qty
+                prefetched = getattr(product, "prefetched_stock", None)
+                if prefetched is None:
+                    # fallback: match via product FK on Stock if your model uses 'nonservice' or 'product'
+                    prefetched = [s for s in all_stock_entries if getattr(s, "nonservice_id", None) == product.id or getattr(s, "product_id", None) == product.id]
+
+                for entry in prefetched:
+                    if qty_left <= 0:
+                        break
+                    sid = entry.id
+                    available = stock_available.get(sid, Decimal(0))
+                    if available <= 0:
+                        continue
+                    deduct = min(available, qty_left)
+                    stock_available[sid] = available - deduct
+                    stock_deductions[sid] = stock_deductions.get(sid, Decimal(0)) + deduct
+                    qty_left -= deduct
+
+                if qty_left > 0:
+                    return Response({"error": f"Not enough stock for product id {product.id}"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Apply deductions: update source stocks, prepare destination stocks, track used entries
+        for stock_id, deducted in stock_deductions.items():
+            stock = locked_stock_map.get(stock_id)
+            if not stock:
+                continue
+
+            original_qty = Decimal(str(stock.quantity))
+            stock.quantity = (original_qty - deducted)
+            # If you track 'sold' or profit fields, update here (optional)
+            # stock.sold = (getattr(stock, 'sold', Decimal(0)) or Decimal(0)) + deducted
+
+            updated_stocks.append(stock)
+
+            # Create new stock for destination branch (copy relevant fields)
+            new_stock_kwargs = {
+                "supplier": stock.supplier,
+                "quantity": deducted,
+                "buying_price": stock.buying_price,
+                "profitBT": stock.profitBT,
+                "profitAT": stock.profitAT,
+                "branch": to_branch,
+                "created": now_iso,
+                "expiry_date": stock.expiry_date,
+            }
+            if hasattr(stock, "nonservice_id"):
+                new_stock_kwargs["nonservice_id"] = getattr(stock, "nonservice_id")
+            elif hasattr(stock, "product_id"):
+                new_stock_kwargs["product_id"] = getattr(stock, "product_id")
+
+            new_stock = Stock(**new_stock_kwargs)
+            stocks_to_create.append(new_stock)
+            used_stock_entries.append((stock, deducted))
+
+        # Persist stock updates
+        if updated_stocks:
+            Stock.objects.bulk_update(updated_stocks, ["quantity"])
+        if stocks_to_create:
+            Stock.objects.bulk_create(stocks_to_create)
+
+        # Create StockTransfer (no invoiceItems JSON — we'll use ReceiptItem rows)
+        last_transfer = StockTransfer.objects.order_by("id").last()
+        next_no = f"ST{last_transfer.id + 1}" if last_transfer else "ST1"
+        transfer = StockTransfer.objects.create(
+            destination=to_branch,
+            isA4=True,
+            receipt_type="STOCK Transfer",
+            date=date_str,
+            time=time_str,
+            invoiceNo=next_no,
+            branch=from_branch,
+            user=user,
+        )
+
+        # Create / get ReceiptItem rows and attach to transfer
+        for item in items:
+            pid = int(item.get("product_id"))
+            product = product_map.get(pid)
+            if not product:
+                continue
+            qty = Decimal(str(item.get("quantity", 1)))
+            sp = Decimal(str(item.get("selling_price", getattr(product, "selling_price", "0"))))
+
+            # compute fields consistent with earlier calculations
+            subtotal = (getattr(product, "taxExclusive", sp) * qty).quantize(MONEY_PREC, rounding=ROUNDING)
+            total = (sp * qty).quantize(MONEY_PREC, rounding=ROUNDING)
+            vat = (getattr(product, "vat", Decimal("0.00000")) * qty).quantize(MONEY_PREC, rounding=ROUNDING)
+
+            # Create or get similar ReceiptItem (matches your earlier code)
+            receipt_item, created = ReceiptItem.objects.get_or_create(
+                product=product,
+                selling_price=sp,
+                quantity=qty,
+                defaults={
+                    "subtotal": subtotal,
+                    "total": total,
+                    "vat": vat,
+                },
+            )
+
+            # If it already existed but you want to update subtotal/total/vat, you can update here:
+            if not created:
+                # Update fields if they differ (optional)
+                changed = False
+                if getattr(receipt_item, "subtotal", None) != subtotal:
+                    receipt_item.subtotal = subtotal
+                    changed = True
+                if getattr(receipt_item, "total", None) != total:
+                    receipt_item.total = total
+                    changed = True
+                if getattr(receipt_item, "vat", None) != vat:
+                    receipt_item.vat = vat
+                    changed = True
+                if changed:
+                    receipt_item.save(update_fields=["subtotal", "total", "vat"])
+
+            # Attach to transfer (adjust m2m name if different)
+            try:
+                transfer.products.add(receipt_item)
+            except Exception:
+                # If StockTransfer doesn't have a M2M to ReceiptItem, ignore or adapt as needed
+                pass
+
+            receipt_items_created.append(receipt_item)
+
+        # Totals on transfer (mirror your second snippet)
+        transfer.subtotal = exc_total
+        transfer.tax = tax_total
+        transfer.total = exc_total + tax_total
+        transfer.Total15VAT = sum((p.selling_price * p.quantity) for p in products_for_totals if getattr(p, "tax", "") == "15")
+        transfer.TotalNonVAT = sum((p.selling_price * p.quantity) for p in products_for_totals if getattr(p, "tax", "") == "0")
+        transfer.TotalExempt = sum((p.selling_price * p.quantity) for p in products_for_totals if getattr(p, "tax", "") not in ("15", "0"))
+
+        # Create comment similar to your receipt snippet
+        user_str = getattr(user, "username", str(user))
+        branch_name = getattr(from_branch, "name", "Unknown Branch")
+        customer_name = getattr(to_branch, "name", "Unknown Branch")
+        currency_code = getattr(getattr(transfer, "currency", None), "code", "USD")
+        product_summary = ", ".join(product_lines_for_comment) if product_lines_for_comment else "No products listed"
+
+        comment = (
+            f"On {date_str} at {time_str}, {customer_name} received {product_summary} from {branch_name}. "
+            f"Invoice No: {transfer.invoiceNo}. Processed by {user_str}. Currency: {currency_code}. "
+            f"Subtotal: {transfer.subtotal}, Tax: {transfer.tax}, Total: {transfer.total}."
+        )
+        transfer.comment = comment
+        transfer.save()  # persist computed totals/comment/file if set later
+
+        # Create TransactionStock entries linking used source stocks to this transfer
+        tx_objects = [
+            TransactionStock(transaction=transfer, stock=stock_entry, quantity=qty_decimal)
+            for stock_entry, qty_decimal in used_stock_entries
+        ]
+        if tx_objects:
+            TransactionStock.objects.bulk_create(tx_objects)
+
+        # Generate PDF using your centralized generate_pdf(transfer)
+        from .utils import generate_document_pdf
+        return generate_document_pdf(transfer)

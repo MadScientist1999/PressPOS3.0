@@ -17206,3 +17206,15 @@ Original exception text was: 'FiscalReceipt' object has no attribute 'fiscal_rec
 2025-10-24 08:06:41,503 - INFO - License is valid.
 2025-10-24 08:06:45,979 - INFO - License is valid.
 2025-10-24 08:06:47,383 - INFO - Watching for file changes with StatReloader
+2025-10-24 08:48:40,040 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 08:48:42,507 - INFO - License is valid.
+2025-10-24 08:48:43,479 - INFO - Watching for file changes with StatReloader
+2025-10-24 08:48:59,440 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 08:49:02,055 - INFO - License is valid.
+2025-10-24 08:49:02,861 - INFO - Watching for file changes with StatReloader
+2025-10-24 08:49:26,016 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 08:49:29,342 - INFO - License is valid.
+2025-10-24 08:49:30,249 - INFO - Watching for file changes with StatReloader
+2025-10-24 08:49:47,358 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 08:49:49,476 - INFO - License is valid.
+2025-10-24 08:49:50,316 - INFO - Watching for file changes with StatReloader
