@@ -28,6 +28,14 @@ from django.template.loader import render_to_string
 from django.http import FileResponse       
 from django.db import transaction
 from django.db.models import Prefetch
+from django.utils import timezone
+from django.db import transaction
+from django.db.models import Prefetch
+from django.http import FileResponse
+
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from decimal import Decimal, ROUND_HALF_UP
 
 @method_decorator(cache_page(60), name='list') 
 class BranchViewSet(viewsets.ModelViewSet):
@@ -1176,23 +1184,6 @@ import json
 import os
 from io import BytesIO
 
-from django.utils import timezone
-from django.db import transaction
-from django.db.models import Prefetch
-from django.http import FileResponse
-
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-
-from .models import (
-    Branch,
-    NonService,
-    Service,
-    Stock,
-    StockTransfer,
-    TransactionStock,
-    ReceiptItem,
-)
 
 class StockTransferViewSet(viewsets.ModelViewSet):
     queryset = StockTransfer.objects.all()

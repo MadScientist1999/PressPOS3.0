@@ -17218,3 +17218,74 @@ Original exception text was: 'FiscalReceipt' object has no attribute 'fiscal_rec
 2025-10-24 08:49:47,358 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
 2025-10-24 08:49:49,476 - INFO - License is valid.
 2025-10-24 08:49:50,316 - INFO - Watching for file changes with StatReloader
+2025-10-24 09:02:37,473 - WARNING - Not Found: /brances
+2025-10-24 09:02:44,384 - WARNING - Not Found: /favicon.ico
+2025-10-24 09:42:27,694 - INFO - License is valid.
+2025-10-24 09:42:36,586 - INFO - License is valid.
+2025-10-24 09:42:39,947 - INFO - Watching for file changes with StatReloader
+2025-10-24 09:43:28,272 - INFO - <QueryDict: {'{"username":"Admin","password":"Admin123","branch":2}': ['']}>
+2025-10-24 09:46:08,872 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 09:46:15,195 - INFO - License is valid.
+2025-10-24 09:46:19,817 - INFO - Watching for file changes with StatReloader
+2025-10-24 09:46:35,248 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 09:46:41,049 - INFO - License is valid.
+2025-10-24 09:46:43,397 - INFO - Watching for file changes with StatReloader
+2025-10-24 09:47:08,661 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 09:47:15,095 - INFO - License is valid.
+2025-10-24 09:47:16,831 - INFO - Watching for file changes with StatReloader
+2025-10-24 10:14:28,055 - INFO - FDMS public key loaded successfully.
+2025-10-24 10:18:30,576 - INFO - License is valid.
+2025-10-24 10:18:51,680 - INFO - License is valid.
+2025-10-24 10:19:13,010 - INFO - Watching for file changes with StatReloader
+2025-10-24 10:23:28,228 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 445, in create
+    credit.qrurl=f"https://{'fdms' if credit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{credit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{credit.receiptGlobalNo:010}{credit.md5_hash_16}"
+                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalCredit' object has no attribute 'md5_hash_16'
+2025-10-24 10:24:47,262 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 10:26:06,195 - INFO - License is valid.
+2025-10-24 10:26:15,488 - INFO - Watching for file changes with StatReloader
+2025-10-24 10:35:01,749 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 10:35:38,335 - INFO - License is valid.
+2025-10-24 10:35:50,564 - INFO - Watching for file changes with StatReloader
+2025-10-24 10:46:38,100 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\other.py changed, reloading.
+2025-10-24 10:47:27,498 - INFO - License is valid.
+2025-10-24 10:47:48,114 - INFO - Watching for file changes with StatReloader
+2025-10-24 10:51:56,062 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\signals.py changed, reloading.
+2025-10-24 10:53:50,883 - INFO - License is valid.
+2025-10-24 10:54:46,430 - INFO - Watching for file changes with StatReloader
+2025-10-24 12:08:07,690 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\signals.py changed, reloading.
+2025-10-24 12:08:11,377 - INFO - License is valid.
+2025-10-24 12:08:13,352 - INFO - Watching for file changes with StatReloader
+2025-10-24 12:09:42,382 - INFO - License is valid.
+2025-10-24 12:09:53,287 - INFO - License is valid.
+2025-10-24 12:09:55,236 - INFO - Watching for file changes with StatReloader
+2025-10-24 12:10:11,502 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\other.py changed, reloading.
+2025-10-24 12:10:14,986 - INFO - License is valid.
+2025-10-24 12:10:16,919 - INFO - Watching for file changes with StatReloader

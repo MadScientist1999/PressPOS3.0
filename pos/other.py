@@ -13,6 +13,10 @@ from django.db.models import Prefetch
 import json
 from django.utils import timezone
 from decimal import Decimal,ROUND_HALF_UP
+from django.utils.encoding import iri_to_uri
+from hashlib import md5
+
+
 def generate_invoice_code():
     now=timezone.now()
     LETTERS = string.ascii_uppercase

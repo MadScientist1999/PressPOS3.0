@@ -11,7 +11,8 @@ from .saver import save
 import os
 import logging
 from .models import BankingDetails
-
+from hashlib import md5
+from django.utils.encoding import iri_to_uri
 logger = logging.getLogger(__name__)
 
 def generate_document_pdf(transaction):
@@ -44,4 +45,8 @@ def generate_document_pdf(transaction):
           print(str(e))
           logger.error(f"Error generating PDF: {e}")
           return HttpResponse(status=500)
-   
+
+def get_cache_key(path):
+    full_path = iri_to_uri(f"/{path}")
+    return f"{path}.{md5(full_path.encode('utf-8')).hexdigest()}"
+

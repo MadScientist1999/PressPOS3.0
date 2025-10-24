@@ -110,7 +110,7 @@ body {
         <img src={{transaction.branch.logo}} alt="Company Logo" height="40">
       </div>
       {%endif%}
-      
+      <h1> {{ transaction.receipt_type }}</h1>
       {%if transaction.branch.company.name%}
       <h2> {{ transaction.branch.company.name }}</h2>
       {%endif%}
@@ -147,11 +147,19 @@ body {
       {% elif transaction.receipt_type == "CREDIT NOTE" %}
       <p>Credit #: {{ transaction.invoiceNo }}</p>
       <p>Reason: {{ transaction.reason }}</p>
-      <p>Reference:{{transaction.referenceNo}}</p>
+      {%if transaction.receipt %}
+      <p>Reference:{{transaction.receipt.invoiceNo}}</p>
+      {%else%}
+      <p>Reference:{{transaction.fiscal_receipt.invoiceNo}}</p>
+      {%endif%}
       {% elif transaction.receipt_type == "DEBIT NOTE" %}
       <p>DEBIT #: {{ transaction.invoiceNo }}</p>
       <p>Reason: {{ transaction.reason }}</p>
-      <p>Reference:{{transaction.referenceNo}}</p>
+      {%if transaction.receipt %}
+      <p>Reference:{{transaction.receipt.invoiceNo}}</p>
+      {%else%}
+      <p>Reference:{{transaction.fiscal_receipt.invoiceNo}}</p>
+      {%endif%}
       {% elif transaction.receipt_type == "QUOTATION" %}
       <p>Quotation #: {{ transaction.invoiceNo }}</p>
       {% endif %}

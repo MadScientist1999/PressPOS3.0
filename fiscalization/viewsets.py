@@ -442,7 +442,7 @@ class FiscalCreditViewSet(viewsets.ModelViewSet):
         
         
         # Copy products
-        credit.qrurl=f"https://{'fdms' if credit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{credit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{credit.receiptGlobalNo:010}{credit.md5_hash_16}"
+        credit.qrurl=f"https://{'fdms' if credit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{credit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{credit.receiptGlobalNo:010}{credit.md5_hash}"
         credit.products.set(receipt.products.all())
         qr = qrcode.QRCode(
           version=1,  # Controls the size (1 = smallest, 40 = largest)
@@ -602,7 +602,7 @@ class FiscalDebitViewSet(viewsets.ModelViewSet):
         
         
         # Copy products
-        debit.qrurl=f"https://{'fdms' if debit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{debit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{debit.receiptGlobalNo:010}{debit.md5_hash_16}"
+        debit.qrurl=f"https://{'fdms' if debit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{debit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{debit.receiptGlobalNo:010}{debit.md5_hash}"
         debit.products.set(receipt.products.all())
         qr = qrcode.QRCode(
           version=1,  # Controls the size (1 = smallest, 40 = largest)

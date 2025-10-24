@@ -4,75 +4,19 @@ from django.dispatch import receiver
 from django.core.cache import cache
 from fiscalization.models import FiscalReceipt,FiscalCredit,FiscalDebit
 from decimal import Decimal
+from .utils import get_cache_key
 from .models import (
     Currency, Supplier, Service, NonService,
     StackHolder, Customer, Receipt, Quotation,Stock, Purchase, Debit,Credit,ReportEntry,Recipe
 )
-@receiver([post_save, post_delete], sender=Currency)
-def clear_currency_cache(sender, **kwargs):
-    cache.delete("currency_list")
-# --- Suppliers ---
-
-@receiver([post_save, post_delete], sender=Supplier)
-def clear_supplier_cache(sender, **kwargs):
-    cache.delete("supplier_list")
-
-# --- Services ---
-@receiver([post_save, post_delete], sender=Service)
-def clear_service_cache(sender, **kwargs):
-    cache.delete(f"service_list")
-
-# --- NonService Products ---
-@receiver([post_save, post_delete], sender=NonService)
-def clear_nonservice_cache(sender, **kwargs):
-    cache.delete(f"product_list")
-    cache.delete(f"nonservice_list")
-
-@receiver([post_save, post_delete], sender=Stock)
-@receiver([post_save, post_delete], sender=Receipt)
-def clear_product_cache_on_stock_change(sender, instance, **kwargs):
-    cache_key = f"product_list"
-    cache.delete(cache_key)
-    cache_key = f"nonservice_list"
-    cache.delete(cache_key)
-
-# --- StackHolders ---
-@receiver([post_save, post_delete], sender=StackHolder)
-def clear_stackholder_cache(sender, **kwargs):
-    cache.delete("stackholder_list")
-
-# --- Customers ---
-@receiver([post_save, post_delete], sender=Customer)
-def clear_customer_cache(sender, **kwargs):
-    cache.delete("customer_list")
 
 # --- Receipts ---
-@receiver([post_save, post_delete], sender=Receipt)
-@receiver([post_save, post_delete], sender=FiscalReceipt)
-@receiver([post_save, post_delete], sender=FiscalCredit)
-@receiver([post_save, post_delete], sender=FiscalDebit)
-@receiver([post_save, post_delete], sender=Debit)
-@receiver([post_save, post_delete], sender=Credit)
-def clear_receipt_cache(sender, **kwargs):
-    cache.delete(f"receipt_list")
-    cache.delete(f"credit_list")
-    cache.delete(f"debit_list")
-
-@receiver([post_save, post_delete], sender=Purchase)
-def clear_purchase_cache(sender, **kwargs):
-    cache.delete(f"purchase_list")
-    cache.delete(f"return_list")
-
-@receiver([post_save, post_delete], sender=Recipe)
-def clear_recipe_cache(sender, **kwargs):
-    cache.delete(f"recipe_list")
-
-# --- Quotations ---
-@receiver([post_save, post_delete], sender=Quotation)
-def clear_quotation_cache(sender, **kwargs):
-    branch_id = kwargs.get('instance').branch.id
-    cache.delete(f"quotation_list_branch_{branch_id}")
-# Global lock to prevent concurrent processing threads
+@receiver([post_save, post_delete])
+def clear_cache(sender, **kwargs):
+    value=f"{sender.__name__.lower()}s"
+    key=get_cache_key(value)
+    cache.delete(key)
+   
 @receiver(post_save, sender=Receipt)
 @receiver(post_save, sender=Credit)
 @receiver(post_save, sender=Debit)
