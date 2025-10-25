@@ -17289,3 +17289,4 @@ AttributeError: 'FiscalCredit' object has no attribute 'md5_hash_16'
 2025-10-24 12:10:11,502 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\other.py changed, reloading.
 2025-10-24 12:10:14,986 - INFO - License is valid.
 2025-10-24 12:10:16,919 - INFO - Watching for file changes with StatReloader
+2025-10-24 12:10:38,297 - INFO - FDMS public key loaded successfully.
