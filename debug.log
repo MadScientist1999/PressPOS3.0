@@ -17290,3 +17290,2036 @@ AttributeError: 'FiscalCredit' object has no attribute 'md5_hash_16'
 2025-10-24 12:10:14,986 - INFO - License is valid.
 2025-10-24 12:10:16,919 - INFO - Watching for file changes with StatReloader
 2025-10-24 12:10:38,297 - INFO - FDMS public key loaded successfully.
+2025-10-24 13:37:06,020 - WARNING - Method Not Allowed: /customers/add_stackholder/
+2025-10-24 13:41:21,203 - WARNING - Method Not Allowed: /customers/add_stackholder/
+2025-10-24 13:42:04,230 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 13:42:09,209 - INFO - License is valid.
+2025-10-24 13:42:10,713 - INFO - Watching for file changes with StatReloader
+2025-10-24 13:43:28,379 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\urls.py changed, reloading.
+2025-10-24 13:43:31,920 - INFO - License is valid.
+2025-10-24 13:43:33,871 - INFO - Watching for file changes with StatReloader
+2025-10-24 13:43:47,876 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\urls.py changed, reloading.
+2025-10-24 13:43:50,986 - INFO - License is valid.
+2025-10-24 13:43:52,371 - INFO - Watching for file changes with StatReloader
+2025-10-24 13:43:56,576 - WARNING - Method Not Allowed: /customers/add_stackholder/
+2025-10-24 13:44:21,848 - WARNING - Method Not Allowed: /customers/add_stackholder/
+2025-10-24 13:48:44,075 - WARNING - Method Not Allowed: /customers/add_individual/
+2025-10-24 13:48:55,540 - WARNING - Method Not Allowed: /customers/add_stakeholder/
+2025-10-24 15:15:36,630 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 15:15:44,715 - INFO - License is valid.
+2025-10-24 15:15:47,484 - INFO - Watching for file changes with StatReloader
+2025-10-24 15:15:50,945 - WARNING - Method Not Allowed: /customers/add_stackholder/
+2025-10-24 15:19:01,928 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-24 15:19:06,413 - INFO - License is valid.
+2025-10-24 15:19:07,910 - INFO - Watching for file changes with StatReloader
+2025-10-24 15:19:12,878 - WARNING - Method Not Allowed: /customers/add_stackholder/
+2025-10-24 15:19:33,915 - WARNING - Method Not Allowed: /customers/add_stackholder/
+2025-10-24 15:22:30,335 - INFO - FDMS public key loaded successfully.
+2025-10-24 15:29:33,750 - INFO - License is valid.
+2025-10-24 15:29:38,042 - INFO - License is valid.
+2025-10-24 15:29:39,795 - INFO - Watching for file changes with StatReloader
+2025-10-24 15:29:52,911 - INFO - FDMS public key loaded successfully.
+2025-10-24 15:29:53,459 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 15:30:12,347 - INFO - FDMS public key loaded successfully.
+2025-10-24 15:30:12,955 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 15:30:24,745 - INFO - FDMS public key loaded successfully.
+2025-10-24 15:30:25,226 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 15:30:28,623 - INFO - FDMS public key loaded successfully.
+2025-10-24 15:30:29,119 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 15:30:45,028 - INFO - FDMS public key loaded successfully.
+2025-10-24 15:30:45,503 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 15:31:44,805 - INFO - FDMS public key loaded successfully.
+2025-10-24 15:31:45,298 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 16:07:31,528 - INFO - <QueryDict: {'{"username":"Admin","password":"Admin123","branch":2}': ['']}>
+2025-10-24 16:10:00,868 - INFO - <QueryDict: {'{"username":"Admin","password":"Admin123","branch":2}': ['']}>
+2025-10-24 16:39:05,839 - INFO - FDMS public key loaded successfully.
+2025-10-24 16:39:06,380 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 17:02:16,455 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:02:21,058 - INFO - License is valid.
+2025-10-24 17:02:23,126 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:03:16,918 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:03:17,371 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 17:03:25,273 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:03:25,729 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 17:06:44,286 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:06:49,658 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:11:13,648 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:11:38,268 - INFO - License is valid.
+2025-10-24 17:11:42,597 - INFO - License is valid.
+2025-10-24 17:11:44,012 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:15:13,983 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:16:44,994 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:16:45,444 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 17:16:53,945 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:16:54,527 - INFO - Error submitting FiscalCredit: 'receiptServerSignature'
+2025-10-24 17:17:54,124 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:17:59,830 - INFO - License is valid.
+2025-10-24 17:18:01,463 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:21:31,150 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:21:35,400 - INFO - License is valid.
+2025-10-24 17:21:37,120 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:21:57,535 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 426, in create
+    credit.receiptJsonbody=json.loads({"receipt":creditJson})
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2025-10-24 17:22:21,148 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:22:26,262 - INFO - License is valid.
+2025-10-24 17:22:28,077 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:23:03,634 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:23:17,080 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:23:51,397 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:24:00,540 - INFO - License is valid.
+2025-10-24 17:24:02,465 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:25:10,340 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:25:15,976 - INFO - License is valid.
+2025-10-24 17:25:17,406 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:25:31,446 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:26:52,772 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:27:39,533 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:29:31,249 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:29:38,101 - INFO - License is valid.
+2025-10-24 17:29:39,679 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:29:54,588 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:30:05,913 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 382, in create
+    credit = FiscalCredit.objects.create(**receipt_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: FiscalCredit() got unexpected keyword arguments: 'stime'
+2025-10-24 17:30:28,998 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 17:30:33,746 - INFO - License is valid.
+2025-10-24 17:30:35,316 - INFO - Watching for file changes with StatReloader
+2025-10-24 17:30:42,888 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:42:08,678 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:44:59,420 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:45:01,816 - INFO - Error submitting FiscalReceipt: 'receiptServerSignature'
+2025-10-24 17:47:18,728 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:49:35,880 - INFO - FDMS public key loaded successfully.
+2025-10-24 17:50:29,586 - INFO - FDMS public key loaded successfully.
+2025-10-24 18:05:03,697 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 18:05:11,716 - INFO - License is valid.
+2025-10-24 18:05:17,197 - INFO - Watching for file changes with StatReloader
+2025-10-24 18:05:31,649 - ERROR - Internal Server Error: /fiscaldebits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 605, in create
+    debit.qrurl=f"https://{'fdms' if debit.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{debit.fiscal_branch.device_id.zfill(10)}{day}{month}{year}{debit.receiptGlobalNo:010}{debit.md5_hash_16}"
+                                                                                                                                                                                        ^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalDebit' object has no attribute 'md5_hash_16'
+2025-10-24 18:06:02,915 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 18:06:18,314 - INFO - License is valid.
+2025-10-24 18:06:21,207 - INFO - Watching for file changes with StatReloader
+2025-10-24 18:14:14,919 - INFO - FDMS public key loaded successfully.
+2025-10-24 18:14:15,999 - INFO - Error submitting FiscalDebit: 'receiptServerSignature'
+2025-10-24 18:15:53,836 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-24 18:15:59,183 - INFO - License is valid.
+2025-10-24 18:16:01,251 - INFO - Watching for file changes with StatReloader
+2025-10-24 18:17:28,977 - INFO - FDMS public key loaded successfully.
+2025-10-24 18:17:29,548 - INFO - Error submitting FiscalDebit: 'receiptServerSignature'
+2025-10-24 18:17:39,766 - INFO - FDMS public key loaded successfully.
+2025-10-24 18:17:40,468 - INFO - Error submitting FiscalDebit: 'receiptServerSignature'
+2025-10-24 18:20:51,335 - INFO - FDMS public key loaded successfully.
+2025-10-25 07:23:25,627 - INFO - License is valid.
+2025-10-25 07:24:06,440 - INFO - License is valid.
+2025-10-25 07:24:27,579 - INFO - Watching for file changes with StatReloader
+2025-10-25 07:31:53,119 - INFO - <QueryDict: {'{"username":"Admin","password":"Admin123","branch":2}': ['']}>
+2025-10-25 07:32:06,140 - ERROR - Internal Server Error: /fiscaldebits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 492, in create
+    receipt = FiscalReceipt.objects.get(id=original_receipt_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+fiscalization.models.FiscalReceipt.DoesNotExist: FiscalReceipt matching query does not exist.
+2025-10-25 07:32:57,799 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 07:33:00,743 - INFO - License is valid.
+2025-10-25 07:33:02,053 - INFO - Watching for file changes with StatReloader
+2025-10-25 07:33:09,852 - ERROR - Internal Server Error: /fiscaldebits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 493, in create
+    receipt = FiscalReceipt.objects.get(id=original_receipt_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+fiscalization.models.FiscalReceipt.DoesNotExist: FiscalReceipt matching query does not exist.
+2025-10-25 07:34:46,268 - INFO - FDMS public key loaded successfully.
+2025-10-25 07:35:22,340 - INFO - FDMS public key loaded successfully.
+2025-10-25 07:35:41,052 - INFO - FDMS public key loaded successfully.
+2025-10-25 07:37:28,207 - INFO - FDMS public key loaded successfully.
+2025-06-25 07:40:18,279 - INFO - FDMS public key loaded successfully.
+2025-06-25 07:45:56,867 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-06-25 07:45:59,337 - INFO - License is valid.
+2025-06-25 07:46:00,581 - INFO - Watching for file changes with StatReloader
+2025-10-25 07:50:43,407 - INFO - FDMS public key loaded successfully.
+2025-10-25 07:51:11,005 - INFO - FDMS public key loaded successfully.
+2025-10-25 07:51:48,329 - INFO - FDMS public key loaded successfully.
+2025-10-25 07:52:47,578 - WARNING - Bad Request: /services/
+2025-10-25 07:55:48,729 - WARNING - Bad Request: /services/
+2025-10-25 08:02:10,909 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\serializers.py changed, reloading.
+2025-10-25 08:02:12,958 - INFO - License is valid.
+2025-10-25 08:02:13,811 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:02:23,466 - WARNING - Bad Request: /services/
+2025-10-25 08:03:30,164 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 08:03:33,781 - INFO - License is valid.
+2025-10-25 08:03:34,693 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:04:08,195 - WARNING - Bad Request: /services/
+2025-10-25 08:06:01,917 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\serializers.py changed, reloading.
+2025-10-25 08:06:04,517 - INFO - License is valid.
+2025-10-25 08:06:05,366 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:07:09,627 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 08:07:12,263 - INFO - License is valid.
+2025-10-25 08:07:13,188 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:07:26,626 - ERROR - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py", line 143, in list
+    all_products.sort(key=lambda x: x["id"])
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py", line 143, in <lambda>
+    all_products.sort(key=lambda x: x["id"])
+                                    ~^^^^^^
+KeyError: 'id'
+2025-10-25 08:07:47,874 - ERROR - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py", line 143, in list
+    all_products.sort(key=lambda x: x["id"])
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py", line 143, in <lambda>
+    all_products.sort(key=lambda x: x["id"])
+                                    ~^^^^^^
+KeyError: 'id'
+2025-10-25 08:07:48,164 - ERROR - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py", line 143, in list
+    all_products.sort(key=lambda x: x["id"])
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py", line 143, in <lambda>
+    all_products.sort(key=lambda x: x["id"])
+                                    ~^^^^^^
+KeyError: 'id'
+2025-10-25 08:07:51,955 - WARNING - Not Found: /favicon.ico
+2025-10-25 08:08:08,788 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\serializers.py changed, reloading.
+2025-10-25 08:08:10,571 - INFO - License is valid.
+2025-10-25 08:08:11,706 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:10:03,122 - INFO - License is valid.
+2025-10-25 08:10:05,187 - INFO - License is valid.
+2025-10-25 08:10:06,101 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:16:48,088 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 08:16:49,925 - INFO - License is valid.
+2025-10-25 08:16:50,691 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:17:52,334 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 08:17:54,530 - INFO - License is valid.
+2025-10-25 08:17:55,777 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:18:11,560 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 08:18:13,529 - INFO - License is valid.
+2025-10-25 08:18:14,347 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:18:42,881 - INFO - License is valid.
+2025-10-25 08:18:45,534 - INFO - License is valid.
+2025-10-25 08:18:46,474 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:22:47,888 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 08:22:50,276 - INFO - License is valid.
+2025-10-25 08:22:51,041 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:23:27,983 - WARNING - Bad Request: /services/
+2025-10-25 08:24:37,008 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 08:24:40,024 - INFO - License is valid.
+2025-10-25 08:24:41,276 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:26:08,050 - INFO - License is valid.
+2025-10-25 08:26:11,183 - INFO - License is valid.
+2025-10-25 08:26:12,198 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:26:49,166 - INFO - License is valid.
+2025-10-25 08:26:52,118 - INFO - License is valid.
+2025-10-25 08:26:53,153 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:27:19,625 - INFO - License is valid.
+2025-10-25 08:27:21,641 - INFO - License is valid.
+2025-10-25 08:27:22,380 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:27:52,565 - INFO - License is valid.
+2025-10-25 08:27:54,507 - INFO - License is valid.
+2025-10-25 08:27:55,438 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:33:27,166 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\signals.py changed, reloading.
+2025-10-25 08:33:29,096 - INFO - License is valid.
+2025-10-25 08:33:30,014 - INFO - Watching for file changes with StatReloader
+2025-10-25 08:34:21,979 - INFO - FDMS public key loaded successfully.
+2025-10-25 08:34:39,349 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 08:35:03,503 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 08:35:09,005 - ERROR - Internal Server Error: /fiscaldebits/
+2025-10-25 08:35:38,017 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 08:36:19,893 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 08:37:29,361 - INFO - FDMS public key loaded successfully.
+2025-10-25 08:38:40,608 - INFO - FDMS public key loaded successfully.
+2025-10-25 08:48:16,385 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 08:48:22,045 - INFO - License is valid.
+2025-10-25 08:48:46,540 - INFO - License is valid.
+2025-10-25 08:48:54,731 - INFO - License is valid.
+2025-10-25 08:49:00,527 - INFO - License is valid.
+2025-10-25 08:49:02,075 - INFO - Watching for file changes with StatReloader
+2025-10-25 09:19:12,469 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 09:19:14,556 - INFO - License is valid.
+2025-10-25 09:19:18,716 - INFO - License is valid.
+2025-10-25 09:19:35,091 - INFO - License is valid.
+2025-10-25 09:19:42,985 - INFO - License is valid.
+2025-10-25 09:19:46,196 - INFO - License is valid.
+2025-10-25 09:19:47,116 - INFO - Watching for file changes with StatReloader
+2025-10-25 09:20:54,835 - INFO - FDMS public key loaded successfully.
+2025-10-25 09:33:36,384 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 09:33:38,360 - INFO - Watching for file changes with StatReloader
+2025-10-25 09:33:58,580 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 09:34:00,964 - INFO - License is valid.
+2025-10-25 09:34:01,986 - INFO - Watching for file changes with StatReloader
+2025-10-25 09:48:26,985 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 09:48:31,497 - INFO - License is valid.
+2025-10-25 09:48:37,539 - INFO - License is valid.
+2025-10-25 10:16:03,454 - INFO - License is valid.
+2025-10-25 10:16:06,542 - INFO - License is valid.
+2025-10-25 10:16:07,412 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:16:24,806 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 78, in create
+    product.vat = (sp * Decimal("0.15") / Decimal("1.15")).quantize(Decimal("0.00001"), rounding=ROUND_HALF_UP)
+    ^^^^^^^^^^^
+AttributeError: property 'vat' of 'NonService' object has no setter
+2025-10-25 10:17:12,451 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 10:17:14,511 - INFO - License is valid.
+2025-10-25 10:17:15,456 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:17:26,511 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 72, in create
+    product.line_number=i
+    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 189, in line_number
+    self.line_number = value
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 189, in line_number
+    self.line_number = value
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 189, in line_number
+    self.line_number = value
+    ^^^^^^^^^^^^^^^^
+  [Previous line repeated 945 more times]
+RecursionError: maximum recursion depth exceeded
+2025-10-25 10:22:05,552 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:22:08,199 - INFO - License is valid.
+2025-10-25 10:22:09,261 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:22:19,416 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 77, in create
+    exc_total += product.subtotal
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 178, in subtotal
+    return self.tax_exclusive * self.quantity
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NonService' object has no attribute 'tax_exclusive'
+2025-10-25 10:22:52,534 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:22:55,389 - INFO - License is valid.
+2025-10-25 10:22:56,393 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:23:06,060 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 112, in create
+    product_lines.append(f"{qty} × {pname} at {sp} each")
+                            ^^^
+NameError: name 'qty' is not defined
+2025-10-25 10:23:34,263 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 10:23:36,252 - INFO - License is valid.
+2025-10-25 10:23:37,285 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:23:55,857 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 10:23:58,571 - INFO - License is valid.
+2025-10-25 10:23:59,675 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:24:15,930 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 112, in create
+    product_lines.append(f"{product.quantity} × {pname} at {sp} each")
+                                                            ^^
+NameError: name 'sp' is not defined
+2025-10-25 10:25:31,949 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 10:25:33,982 - INFO - License is valid.
+2025-10-25 10:25:35,027 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:25:39,122 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 10:25:41,093 - INFO - License is valid.
+2025-10-25 10:25:41,966 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:25:53,410 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 246, in create
+    receipt.receiptJsonbody = json.dumps({"receipt": jsonBody})
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+2025-10-25 10:27:05,349 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 10:27:07,356 - INFO - License is valid.
+2025-10-25 10:27:08,393 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:28:47,494 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:28:49,170 - INFO - License is valid.
+2025-10-25 10:28:50,265 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:29:00,942 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 110, in create
+    receipt_lines.append(product.json_body)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 199, in json_body
+    no = self.line_number or 0
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 185, in line_number
+    return self.line_number
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 185, in line_number
+    return self.line_number
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 185, in line_number
+    return self.line_number
+           ^^^^^^^^^^^^^^^^
+  [Previous line repeated 944 more times]
+RecursionError: maximum recursion depth exceeded
+2025-10-25 10:29:34,724 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:29:36,712 - INFO - License is valid.
+2025-10-25 10:29:37,675 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:29:46,838 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 110, in create
+    receipt_lines.append(product.json_body)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 225, in json_body
+    "receiptLineTotal": float(self.product_total),
+                              ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NonService' object has no attribute 'product_total'
+2025-10-25 10:34:03,823 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 10:34:06,001 - INFO - License is valid.
+2025-10-25 10:34:07,166 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:34:18,029 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 110, in create
+    receipt_lines.append(product.json_body)
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py", line 225, in json_body
+    "receiptLineTotal": float(self.product_total),
+                              ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NonService' object has no attribute 'product_total'
+2025-10-25 10:35:18,730 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:35:20,707 - INFO - License is valid.
+2025-10-25 10:35:21,586 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:35:49,010 - INFO - FDMS public key loaded successfully.
+2025-10-25 10:45:34,267 - WARNING - Bad Request: /services/
+2025-10-25 10:46:00,417 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:46:03,668 - INFO - License is valid.
+2025-10-25 10:46:04,928 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:46:08,049 - WARNING - Bad Request: /services/
+2025-10-25 10:49:52,096 - WARNING - Bad Request: /services/
+2025-10-25 10:53:21,557 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:53:24,646 - INFO - License is valid.
+2025-10-25 10:53:25,591 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:53:42,801 - WARNING - Bad Request: /services/
+2025-10-25 10:53:51,420 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 10:53:53,551 - INFO - License is valid.
+2025-10-25 10:53:54,703 - INFO - Watching for file changes with StatReloader
+2025-10-25 10:56:51,873 - WARNING - Bad Request: /services/
+2025-10-25 10:56:56,769 - WARNING - Bad Request: /services/
+2025-10-25 10:57:18,643 - INFO - FDMS public key loaded successfully.
+2025-10-25 10:58:11,362 - INFO - FDMS public key loaded successfully.
+2025-10-25 11:02:15,860 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 11:02:18,039 - INFO - License is valid.
+2025-10-25 11:02:19,077 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:02:37,348 - INFO - FDMS public key loaded successfully.
+2025-10-25 11:24:25,410 - INFO - FDMS public key loaded successfully.
+2025-10-25 11:24:30,643 - INFO - <QueryDict: {'{"username":"Admin","password":"Admin123","branch":2}': ['']}>
+2025-10-25 11:26:30,868 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:26:34,391 - INFO - License is valid.
+2025-10-25 11:26:35,887 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:26:46,976 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:26:48,453 - INFO - License is valid.
+2025-10-25 11:26:49,391 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:27:47,575 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:27:49,554 - INFO - License is valid.
+2025-10-25 11:27:50,670 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:28:09,568 - INFO - FDMS public key loaded successfully.
+2025-10-25 11:30:14,994 - INFO - FDMS public key loaded successfully.
+2025-10-25 11:35:36,567 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:35:39,046 - INFO - License is valid.
+2025-10-25 11:35:39,927 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:35:54,089 - INFO - FDMS public key loaded successfully.
+2025-10-25 11:38:59,475 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:39:01,438 - INFO - License is valid.
+2025-10-25 11:39:02,360 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:39:27,571 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:39:29,385 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:39:36,946 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:39:38,492 - INFO - License is valid.
+2025-10-25 11:39:39,592 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:39:50,726 - INFO - FDMS public key loaded successfully.
+2025-10-25 11:46:06,999 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:46:09,395 - INFO - License is valid.
+2025-10-25 11:46:10,205 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:52:20,646 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 11:52:22,234 - INFO - License is valid.
+2025-10-25 11:52:23,172 - INFO - Watching for file changes with StatReloader
+2025-10-25 11:54:18,906 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 11:54:20,567 - INFO - License is valid.
+2025-10-25 11:54:21,437 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:14:28,168 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 12:14:30,248 - INFO - License is valid.
+2025-10-25 12:14:31,211 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:17:52,533 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 12:17:54,624 - INFO - License is valid.
+2025-10-25 12:17:55,681 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:18:05,061 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 29, in create
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 495, in to_internal_value
+    for field in fields:
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 378, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `date` is not valid for model `FiscalReceipt` in `fiscalization.serializers.FiscalReceiptSerializer`.
+2025-10-25 12:18:48,388 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\serializers.py changed, reloading.
+2025-10-25 12:18:50,935 - INFO - License is valid.
+2025-10-25 12:18:51,763 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:19:01,435 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 119, in create
+    receipt.time = time_str
+    ^^^^^^^^^^^^
+AttributeError: property 'time' of 'FiscalReceipt' object has no setter
+2025-10-25 12:19:56,453 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 12:19:59,069 - INFO - License is valid.
+2025-10-25 12:20:00,387 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:25:40,621 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 12:25:43,272 - INFO - License is valid.
+2025-10-25 12:25:44,389 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:30:58,037 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 12:31:00,465 - INFO - License is valid.
+2025-10-25 12:31:01,321 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:31:55,804 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 228, in create
+    receipt.qrurl = f"https://{'fdms' if branch.production else 'fdmstest'}.zimra.co.zw/{branch.device_id.zfill(10)}{day}{month}{year}{globalNo:010}{md5_hash_16}"
+                                                                                                                     ^^^
+NameError: name 'day' is not defined
+2025-10-25 12:34:18,412 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 228, in create
+    receipt.qrurl = f"https://{'fdms' if branch.production else 'fdmstest'}.zimra.co.zw/{branch.device_id.zfill(10)}{day}{month}{year}{globalNo:010}{md5_hash_16}"
+                                                                                                                     ^^^
+NameError: name 'day' is not defined
+2025-10-25 12:34:33,970 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 12:34:36,273 - INFO - License is valid.
+2025-10-25 12:34:37,327 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:35:42,413 - INFO - FDMS public key loaded successfully.
+2025-10-25 12:37:44,852 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 12:37:52,708 - INFO - License is valid.
+2025-10-25 12:38:04,801 - INFO - License is valid.
+2025-10-25 12:38:11,550 - INFO - License is valid.
+2025-10-25 12:38:17,405 - INFO - License is valid.
+2025-10-25 12:38:18,845 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:39:44,441 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 12:39:46,542 - INFO - License is valid.
+2025-10-25 12:39:47,393 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:40:04,066 - INFO - FDMS public key loaded successfully.
+2025-10-25 12:42:17,469 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 12:42:23,869 - INFO - License is valid.
+2025-10-25 12:42:24,851 - INFO - Watching for file changes with StatReloader
+2025-10-25 12:42:46,852 - INFO - FDMS public key loaded successfully.
+2025-10-25 12:59:20,174 - INFO - FDMS public key loaded successfully.
+2025-10-25 13:03:30,306 - INFO - FDMS public key loaded successfully.
+2025-10-25 13:04:58,157 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 13:05:01,485 - INFO - License is valid.
+2025-10-25 13:05:02,569 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:05:15,247 - INFO - FDMS public key loaded successfully.
+2025-10-25 13:31:52,604 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\reports\models.py changed, reloading.
+2025-10-25 13:31:54,774 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:36:18,219 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 13:36:20,256 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:36:39,288 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\reports\models.py changed, reloading.
+2025-10-25 13:36:40,857 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:36:48,811 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\reports\models.py changed, reloading.
+2025-10-25 13:36:50,213 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:36:55,584 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\reports\models.py changed, reloading.
+2025-10-25 13:36:57,695 - INFO - License is valid.
+2025-10-25 13:36:58,616 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:37:53,546 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\reports\models.py changed, reloading.
+2025-10-25 13:37:55,339 - INFO - License is valid.
+2025-10-25 13:37:56,146 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:39:14,034 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 256, in create
+    return self.generate_document_pdf()  # Should return BytesIO
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceiptViewSet' object has no attribute 'generate_document_pdf'
+2025-10-25 13:39:45,087 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 13:39:48,138 - INFO - License is valid.
+2025-10-25 13:39:49,100 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:40:02,401 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 256, in create
+    return receipt.generate_document_pdf()  # Should return BytesIO
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute 'generate_document_pdf'
+2025-10-25 13:40:32,391 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 13:40:35,367 - INFO - License is valid.
+2025-10-25 13:40:36,479 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:40:46,040 - ERROR - Internal Server Error: /fiscalreceipts/
+2025-10-25 13:42:31,818 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 13:42:33,865 - INFO - License is valid.
+2025-10-25 13:42:34,659 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:42:43,553 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 252, in create
+    receipt.make_qr()
+    ^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute 'make_qr'
+2025-10-25 13:43:02,546 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 13:43:04,908 - INFO - License is valid.
+2025-10-25 13:43:05,833 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:43:15,687 - INFO - FDMS public key loaded successfully.
+2025-10-25 13:43:16,178 - INFO - Error submitting FiscalReceipt: 'receiptServerSignature'
+2025-10-25 13:49:06,890 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 13:49:09,474 - INFO - License is valid.
+2025-10-25 13:49:10,249 - INFO - Watching for file changes with StatReloader
+2025-10-25 13:50:34,407 - INFO - FDMS public key loaded successfully.
+2025-10-25 13:58:12,591 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 13:58:14,965 - INFO - License is valid.
+2025-10-25 13:58:16,165 - INFO - Watching for file changes with StatReloader
+2025-10-25 14:15:55,643 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 14:15:58,963 - INFO - License is valid.
+2025-10-25 14:16:00,164 - INFO - Watching for file changes with StatReloader
+2025-10-25 14:31:05,623 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 14:31:08,862 - INFO - License is valid.
+2025-10-25 14:31:10,081 - INFO - Watching for file changes with StatReloader
+2025-10-25 14:42:04,809 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 14:42:08,303 - INFO - License is valid.
+2025-10-25 14:42:09,097 - INFO - Watching for file changes with StatReloader
+2025-10-25 14:56:13,865 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 14:56:17,966 - INFO - License is valid.
+2025-10-25 14:56:20,112 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:14:42,364 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\models.py changed, reloading.
+2025-10-25 15:14:48,160 - INFO - License is valid.
+2025-10-25 15:14:48,978 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:18:59,894 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:19:03,922 - INFO - License is valid.
+2025-10-25 15:19:04,621 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:19:14,211 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 251, in create
+    receipt.make_qr()
+    ^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute 'make_qr'
+2025-10-25 15:19:32,552 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 15:19:34,530 - INFO - License is valid.
+2025-10-25 15:19:35,376 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:19:45,756 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 112, in create
+    receipt.fiscal_day=open_day
+                       ^^^^^^^^
+NameError: name 'open_day' is not defined
+2025-10-25 15:20:10,788 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 15:20:12,988 - INFO - License is valid.
+2025-10-25 15:20:14,250 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:20:28,508 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 135, in create
+    previousReceiptHash=receipt_hash_base64
+                        ^^^^^^^^^^^^^^^^^^^
+NameError: name 'receipt_hash_base64' is not defined
+2025-10-25 15:20:47,702 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 15:20:50,438 - INFO - License is valid.
+2025-10-25 15:20:51,214 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:21:03,211 - INFO - FDMS public key loaded successfully.
+2025-10-25 15:27:17,454 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:27:19,530 - INFO - License is valid.
+2025-10-25 15:27:20,247 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:27:31,348 - INFO - FDMS public key loaded successfully.
+2025-10-25 15:41:29,581 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:41:31,748 - INFO - License is valid.
+2025-10-25 15:41:32,562 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:45:07,062 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:45:09,794 - INFO - License is valid.
+2025-10-25 15:45:10,612 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:45:20,627 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 131, in create
+    receipt.make_fiscal_values(tax_lines_concat)
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 154, in make_fiscal_values
+    self.result_string = f"{self.fiscal_branch.device_id}{type}{self.currency.symbol}{self.receiptGlobalNo}{self.created_at_iso}{int(self.total*Decimal('100'))}{self.tax_lines_concat}{self.fiscal_day.previousReceiptHash if self.fiscal_day.counter != 1 else ''}"
+                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute 'tax_lines_concat'
+2025-10-25 15:46:43,824 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:46:45,928 - INFO - License is valid.
+2025-10-25 15:46:46,713 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:46:56,749 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 131, in create
+    receipt.make_fiscal_values(tax_lines_concat)
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 154, in make_fiscal_values
+    self.result_string = f"{self.fiscal_branch.device_id}{type}{self.currency.symbol}{self.receiptGlobalNo}{self.created_at_iso}{int(self.total*Decimal('100'))}{self.tax_lines_concat}{self.fiscal_day.previousReceiptHash if self.fiscal_day.counter != 1 else ''}"
+                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute 'tax_lines_concat'
+2025-10-25 15:47:34,897 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:47:37,214 - INFO - License is valid.
+2025-10-25 15:47:37,968 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:47:53,843 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:47:55,882 - INFO - License is valid.
+2025-10-25 15:47:56,662 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:48:27,808 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:48:30,311 - INFO - License is valid.
+2025-10-25 15:48:31,042 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:48:41,764 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 131, in create
+    receipt.make_fiscal_values(tax_lines_concat)
+TypeError: FiscalReceipt.make_fiscal_values() takes 1 positional argument but 2 were given
+2025-10-25 15:48:59,067 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 15:49:01,339 - INFO - License is valid.
+2025-10-25 15:49:02,153 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:49:12,917 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 113, in create
+    receipt.make_fiscal_values()
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 154, in make_fiscal_values
+    self.result_string = f"{self.fiscal_branch.device_id}{type}{self.currency.symbol}{self.receiptGlobalNo}{self.created_at_iso}{int(self.total*Decimal('100'))}{self.tax_lines_concat}{self.fiscal_day.previousReceiptHash if self.fiscal_day.counter != 1 else ''}"
+                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute 'tax_lines_concat'
+2025-10-25 15:50:18,779 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:50:21,920 - INFO - License is valid.
+2025-10-25 15:50:22,666 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:50:32,796 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 113, in create
+    receipt.make_fiscal_values()
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 154, in make_fiscal_values
+    self.result_string = f"{self.fiscal_branch.device_id}{type}{self.currency.symbol}{self.receiptGlobalNo}{self.created_at_iso}{int(self.total*Decimal('100'))}{self.tax_line_concat}{self.fiscal_day.previousReceiptHash if self.fiscal_day.counter != 1 else ''}"
+                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 130, in tax_line_concat
+    for taxline in self._receipt_taxes:
+TypeError: 'NoneType' object is not iterable
+2025-10-25 15:50:50,894 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:50:53,201 - INFO - License is valid.
+2025-10-25 15:50:54,068 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:51:03,138 - ERROR - Internal Server Error: /fiscalreceipts/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 133, in tax_line_concat
+    self._tax_lines_concat += (
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute '_tax_lines_concat'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 113, in create
+    receipt.make_fiscal_values()
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 154, in make_fiscal_values
+    self.result_string = f"{self.fiscal_branch.device_id}{type}{self.currency.symbol}{self.receiptGlobalNo}{self.created_at_iso}{int(self.total*Decimal('100'))}{self.tax_line_concat}{self.fiscal_day.previousReceiptHash if self.fiscal_day.counter != 1 else ''}"
+                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 140, in tax_line_concat
+    self._tax_lines_concat += f"{taxline['taxCode']}0{round(float(taxline.get('SalesAmountwithTax', 0)) * 100)}"
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FiscalReceipt' object has no attribute '_tax_lines_concat'
+2025-10-25 15:51:37,658 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 15:51:40,174 - INFO - License is valid.
+2025-10-25 15:51:40,914 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:51:51,562 - INFO - FDMS public key loaded successfully.
+2025-10-25 15:52:40,484 - INFO - FDMS public key loaded successfully.
+2025-10-25 15:52:51,649 - INFO - FDMS public key loaded successfully.
+2025-10-25 15:57:41,424 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 15:57:43,514 - INFO - License is valid.
+2025-10-25 15:57:44,369 - INFO - Watching for file changes with StatReloader
+2025-10-25 15:57:52,396 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 15:57:57,526 - INFO - License is valid.
+2025-10-25 15:57:58,390 - INFO - Watching for file changes with StatReloader
+2025-10-25 16:03:37,326 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 16:03:38,421 - INFO - Watching for file changes with StatReloader
+2025-10-25 16:03:43,241 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 16:03:45,791 - INFO - License is valid.
+2025-10-25 16:03:46,579 - INFO - Watching for file changes with StatReloader
+2025-10-25 16:29:56,673 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 16:29:58,779 - INFO - License is valid.
+2025-10-25 16:29:59,990 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:02:35,843 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 17:02:38,149 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:03:09,830 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 17:03:10,970 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:03:20,701 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 17:03:23,057 - INFO - License is valid.
+2025-10-25 17:03:23,895 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:04:06,374 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:04:08,441 - INFO - License is valid.
+2025-10-25 17:04:09,264 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:07:59,558 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\pos\viewsets.py changed, reloading.
+2025-10-25 17:08:01,756 - INFO - License is valid.
+2025-10-25 17:08:02,566 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:11:33,624 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:11:35,730 - INFO - License is valid.
+2025-10-25 17:11:36,494 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:11:44,375 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 206, in create
+    credit = FiscalCredit.objects.create(**receipt_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 545, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 291, in __set__
+    raise ValueError(
+ValueError: Cannot assign "35": "FiscalCredit.customer" must be a "Customer" instance.
+2025-10-25 17:14:46,472 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:14:48,882 - INFO - License is valid.
+2025-10-25 17:14:49,831 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:20:07,848 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:20:12,817 - INFO - License is valid.
+2025-10-25 17:20:14,071 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:20:21,609 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 232, in create
+    credit.receipt_taxes=receiptJsonBody["receiptTaxes"]
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'receipt_taxes' of 'FiscalCredit' object has no setter
+2025-10-25 17:23:04,291 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 17:23:11,325 - INFO - License is valid.
+2025-10-25 17:23:13,258 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:23:22,073 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 235, in create
+    credit.make_fiscal_values()
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py", line 191, in make_fiscal_values
+    self.receiptJsonbody["creditDebitNote"]={"receiptGlobalNo":f"{self.fiscal_receipt.receiptGlobalNo}","fiscalDayNo":f"{self.fiscal_receipt.fiscal_day.FiscalDayNo}","receiptID":f"{json.loads(self.fiscal_receipt.serverResponse)['receiptID']}"}
+                                                                                                                                                                                     ^^^^
+UnboundLocalError: cannot access local variable 'json' where it is not associated with a value
+2025-10-25 17:24:27,915 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 17:24:32,410 - INFO - License is valid.
+2025-10-25 17:24:33,799 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:24:43,857 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:29:45,812 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:29:50,375 - INFO - License is valid.
+2025-10-25 17:29:51,579 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:30:05,334 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:30:13,973 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 17:30:30,521 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 17:30:36,422 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 17:30:44,569 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:30:48,814 - INFO - License is valid.
+2025-10-25 17:30:50,881 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:30:56,868 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 17:31:22,255 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:34:58,426 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 17:35:01,962 - INFO - License is valid.
+2025-10-25 17:35:03,124 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:35:16,894 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:35:50,684 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 17:37:44,082 - INFO - License is valid.
+2025-10-25 17:37:47,807 - INFO - License is valid.
+2025-10-25 17:37:48,880 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:37:58,202 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:39:28,313 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:42:15,823 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 17:42:19,373 - INFO - License is valid.
+2025-10-25 17:42:20,351 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:42:34,408 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:42:47,134 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:49:50,042 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:49:53,733 - INFO - License is valid.
+2025-10-25 17:49:55,094 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:50:11,463 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:50:58,670 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:56:26,700 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:56:30,927 - INFO - License is valid.
+2025-10-25 17:56:32,321 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:56:46,864 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:57:04,332 - INFO - FDMS public key loaded successfully.
+2025-10-25 17:59:10,295 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 17:59:13,706 - INFO - License is valid.
+2025-10-25 17:59:14,759 - INFO - Watching for file changes with StatReloader
+2025-10-25 17:59:29,003 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:00:05,423 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 18:00:14,418 - INFO - License is valid.
+2025-10-25 18:00:17,370 - INFO - License is valid.
+2025-10-25 18:00:18,382 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:00:25,823 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 18:00:50,980 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:02:14,802 - INFO - License is valid.
+2025-10-25 18:02:17,952 - INFO - License is valid.
+2025-10-25 18:02:19,021 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:02:33,918 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 228, in create
+    credit.receipt_taxes.add(tax_line)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'add'
+2025-10-25 18:02:51,600 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 228, in create
+    credit.receipt_taxes.add(tax_line)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'add'
+2025-10-25 18:03:53,327 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:03:55,976 - INFO - License is valid.
+2025-10-25 18:03:57,027 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:04:03,529 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 228, in create
+    credit.receipt_taxes.add(tax_line)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'add'
+2025-10-25 18:04:41,554 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 18:04:44,362 - INFO - License is valid.
+2025-10-25 18:04:45,525 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:04:55,074 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:10:43,589 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 18:10:47,040 - INFO - License is valid.
+2025-10-25 18:10:48,296 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:10:57,313 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:11:56,091 - INFO - License is valid.
+2025-10-25 18:11:58,851 - INFO - License is valid.
+2025-10-25 18:11:59,703 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:14:41,997 - INFO - License is valid.
+2025-10-25 18:14:46,899 - INFO - License is valid.
+2025-10-25 18:14:49,118 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:16:20,691 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:27:31,776 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:27:39,099 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:28:49,359 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:28:51,163 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:28:54,864 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:28:57,299 - INFO - License is valid.
+2025-10-25 18:28:58,413 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:29:10,820 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:29:29,637 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:33:02,090 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 18:33:04,722 - INFO - License is valid.
+2025-10-25 18:33:06,225 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:33:24,717 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:33:42,130 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:37:13,817 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:37:18,680 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:38:12,151 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:38:22,266 - INFO - License is valid.
+2025-10-25 18:38:24,794 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:38:47,449 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:39:02,217 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 18:39:08,070 - ERROR - Internal Server Error: /fiscalcredits/
+2025-10-25 18:39:33,205 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 233, in create
+    credit.receipt_taxes=receiptJsonBody["receiptTaxes"]
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'receipt_taxes' of 'FiscalCredit' object has no setter
+2025-10-25 18:40:01,297 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:40:23,846 - ERROR - Internal Server Error: /fiscalcredits/
+Traceback (most recent call last):
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py", line 233, in create
+    credit.receipt_taxes=receiptJsonBody["receiptTaxes"]
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'receipt_taxes' of 'FiscalCredit' object has no setter
+2025-10-25 18:41:12,591 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:41:13,954 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:41:17,442 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:41:22,224 - INFO - License is valid.
+2025-10-25 18:41:23,153 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:41:35,204 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:42:09,947 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:42:43,569 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\models.py changed, reloading.
+2025-10-25 18:42:48,974 - INFO - License is valid.
+2025-10-25 18:42:50,164 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:45:45,797 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 18:45:48,712 - INFO - License is valid.
+2025-10-25 18:45:50,075 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:46:02,387 - ERROR - Internal Server Error: /fiscaldebits/
+2025-10-25 18:46:16,191 - ERROR - Internal Server Error: /fiscaldebits/
+2025-10-25 18:46:41,183 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 18:46:43,178 - INFO - License is valid.
+2025-10-25 18:46:44,090 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:46:54,268 - INFO - FDMS public key loaded successfully.
+2025-10-25 18:47:47,525 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 18:47:50,793 - INFO - License is valid.
+2025-10-25 18:47:51,909 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:48:25,030 - INFO - C:\Users\Kudzai\Desktop\PressPOS3.0\fiscalization\viewsets.py changed, reloading.
+2025-10-25 18:48:27,659 - INFO - License is valid.
+2025-10-25 18:48:28,442 - INFO - Watching for file changes with StatReloader
+2025-10-25 18:48:45,381 - ERROR - Internal Server Error: /fiscaldebits/
+2025-10-25 18:48:54,328 - INFO - FDMS public key loaded successfully.

@@ -1,11 +1,9 @@
 from .serializers import *
 from .models import *
-from rest_framework import viewsets
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
 from django.core.cache import cache
 from django.db.models import Sum, Q
-from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework import viewsets
@@ -20,7 +18,7 @@ import barcode
 from django.db.models import F
 from .models import TransactionStock
 from collections import defaultdict
-     
+import os
 from main.settings import HTML_ROOT
 from barcode.writer import ImageWriter
 from .saver import saveLabel
@@ -32,7 +30,6 @@ from django.utils import timezone
 from django.db import transaction
 from django.db.models import Prefetch
 from django.http import FileResponse
-
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from decimal import Decimal, ROUND_HALF_UP
@@ -72,8 +69,8 @@ class SupplierViewSet(viewsets.ModelViewSet):
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
-
-    @action(detail=False, methods=['post'], url_path='add_individual',permission_classes=[AllowAny])
+   
+    @action(detail=False, methods=['post'], url_path='add_stakeholder', permission_classes=[AllowAny])
     def add_individual(self, request):
         data = request.data.copy()
         data['customer_type'] = 'individual'
@@ -83,7 +80,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
             serializer.save()
             return Response({"message": "Customer created successfully"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+  
     @action(detail=False, methods=['post'], url_path='add_stakeholder', permission_classes=[AllowAny])
     def add_stakeholder(self, request):
         data = request.data.copy()
@@ -182,81 +179,45 @@ class ReceiptViewSet(viewsets.ModelViewSet):
         )
         stock_by_nonservice = {ns.id: getattr(ns, "prefetched_stock", []) for ns in non_services}
         stock_available = {s.id: Decimal(str(s.quantity)) for ns in non_services for s in stock_by_nonservice.get(ns.id, [])}
-
         exc_total = Decimal("0.0000")
         tax_total = Decimal("0.0000")
         products_for_totals = []
         product_lines = []
           
-        
-        
-        for item in items:
+        for i,item in enumerate(items):
             product = product_map.get(item["product_id"])
+            
             if not product:
                 continue
             
-            
-            qty = Decimal(item.get("quantity", 1))
-            sp = Decimal(item.get("selling_price", product.selling_price))
-            product.selling_price = sp
+            product.line_number=i
+            product.production_mode=branch.production
+            product.quantity = Decimal(item.get("quantity", 1))
+            product.selling_price = Decimal(item.get("selling_price", product.selling_price))
 
-            # VAT calculations
-            if product.tax == "15":
-                product.vat = (sp * Decimal("0.15") / Decimal("1.15")).quantize(Decimal("0.00001"), rounding=ROUND_HALF_UP)
-                product.taxExclusive = (sp / Decimal("1.15")).quantize(Decimal("0.00001"), rounding=ROUND_HALF_UP)
-            elif product.tax == "0":
-                product.vat = Decimal("0.00000")
-                product.taxExclusive = sp
-            else:  # Exempt
-                product.vat = Decimal("0.00000")
-                product.taxExclusive = sp
-
-            product.quantity = qty
-            product.product_total = sp * qty
-            product.product_vat = product.vat * qty
-            product.product_subtotal = product.taxExclusive * qty
-
-            exc_total += product.product_subtotal
-            tax_total += product.product_vat
+            exc_total += product.subtotal
+            tax_total += product.total_vat
             products_for_totals.append(product)
-
-            # Adjust stock for NonService
-            if isinstance(product, NonService):
-                qty_left = qty
-                for stock in stock_by_nonservice.get(product.id, []):
-                    if qty_left <= 0:
-                        break
-                    available = stock_available.get(stock.id, Decimal(0))
-                    if available <= 0:
-                        continue
-                    deduct = min(qty_left, available)
-                    stock.quantity -= deduct
-                    stock.sold += deduct
-                    stock.save(update_fields=["quantity", "sold"])
-                    stock_available[stock.id] -= deduct
-                    qty_left -= deduct
-                    used_stock_entries.append((stock, deduct))
-                    
-            # Create or update ReceiptItem
+            try:
+                used_stock_entries = product.adjust_stock(stock_available, stock_by_nonservice)
+            except:
+                print("Service")
+            # ReceiptItem creation
             receipt_item, created = ReceiptItem.objects.get_or_create(
                 product=product,
-                selling_price=sp,
-                quantity= qty,
+                selling_price=product.selling_price,
+                quantity=product.quantity,
                 defaults={
-                   
-                    "subtotal": product.product_subtotal,
-                    "total": product.product_total,
-                    "vat": product.product_vat,
+                    "subtotal": product.subtotal,
+                    "total": product.total,
+                    "vat": product.total_vat,
                 },
             )
-            
             receipt.products.add(receipt_item)
-            pname = item.get("product_name", "Unknown Product")
-            product_lines.append(f"{qty} × {pname} at {sp} each")
+            product_lines.append(f"{product.quantity} × {product.name} at {product.selling_price} each")
+        
         # --- Construct comment ---
         product_summary = ", ".join(product_lines) if product_lines else "No products listed"
-
-        
         # Totals
         receipt.subtotal = exc_total
         receipt.tax = tax_total
@@ -264,19 +225,12 @@ class ReceiptViewSet(viewsets.ModelViewSet):
         receipt.Total15VAT = sum(p.selling_price * p.quantity for p in products_for_totals if p.tax == "15")
         receipt.TotalNonVAT = sum(p.selling_price * p.quantity for p in products_for_totals if p.tax == "0")
         receipt.TotalExempt = sum(p.selling_price * p.quantity for p in products_for_totals if p.tax == "Exempt")
-
-        # Timestamp
-        import django.utils.timezone as timezone
-        now = timezone.localtime().isoformat(timespec='seconds').split("+")[0]
-        date_str, time_str = now.split("T")
-        receipt.date = date_str
-        receipt.time = time_str
         customer_name = getattr(receipt.customer, "name", "Unknown Customer")
         branch_name = getattr(receipt.branch, "name", "Unknown Branch")
         currency_code = getattr(receipt.currency, "code", "Unknown")
 
         comment = (
-            f"On {date_str} at {time_str}, {customer_name} bought {product_summary} to "
+            f"On {receipt.day} at {receipt.time}, {customer_name} bought {product_summary} to "
             f"the {branch_name} branch. "
             f"The invoice (Invoice No: {receipt.invoiceNo}) was processed by {user}. "
             f"The transaction was recorded in {currency_code} currency, with a payment adjustment of "
@@ -301,7 +255,7 @@ class ReceiptViewSet(viewsets.ModelViewSet):
         TransactionStock.objects.bulk_create(receipt_stock_objects)
         # Generate PDF and return as FileResponse
         from .utils import generate_document_pdf
-        return generate_document_pdf(receipt)  # Should return BytesIO
+        return self.generate_document_pdf()  # Should return BytesIO
         
     def get_queryset(self):
         # Base queryset
@@ -737,8 +691,7 @@ class CreditViewSet(viewsets.ModelViewSet):
         for stock_id, qty in stock_increments.items():
             Stock.objects.filter(id=stock_id).update(quantity=F('quantity') + qty)
             # Get or create currency
-        from .utils import generate_document_pdf
-        return generate_document_pdf(credit)
+        return receipt.generate_document_pdf()
 
     def get_queryset(self):
         # Base queryset
@@ -1179,10 +1132,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
         except Exception as e:
             print("Error assembling recipe:", e)
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-from decimal import Decimal, ROUND_HALF_UP
-import json
-import os
-from io import BytesIO
 
 
 class StockTransferViewSet(viewsets.ModelViewSet):

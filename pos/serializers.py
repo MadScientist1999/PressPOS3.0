@@ -243,7 +243,7 @@ class ReceiptSerializer(serializers.ModelSerializer):
              "on_account", "change_given", "payment", "comment",
              # new ones ↓
              "branch", "user", "Total15VAT", "TotalNonVAT",
-             "TotalExempt", "profitBT", "profitAT", "date", "time"
+             "TotalExempt", "profitBT", "profitAT"
         ]
 
         
@@ -362,7 +362,7 @@ class TransactionStockSerializer(serializers.ModelSerializer):
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = '__all__'
+        fields = "__all__"
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:

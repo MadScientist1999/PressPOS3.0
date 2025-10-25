@@ -10,12 +10,19 @@ from .models import (
     StackHolder, Customer, Receipt, Quotation,Stock, Purchase, Debit,Credit,ReportEntry,Recipe
 )
 
-# --- Receipts ---
 @receiver([post_save, post_delete])
 def clear_cache(sender, **kwargs):
-    value=f"{sender.__name__.lower()}s"
-    key=get_cache_key(value)
+    # Delete cache for the current model
+    value = f"{sender.__name__.lower()}s"
+    key = get_cache_key(value)
     cache.delete(key)
+
+    # Also delete cache for the base Product class if sender is a subclass
+    for base in sender.__bases__:
+        if base.__name__ == "Product":  # or use isinstance check
+            base_value = f"{base.__name__.lower()}s"
+            base_key = get_cache_key(base_value)
+            cache.delete(base_key)
    
 @receiver(post_save, sender=Receipt)
 @receiver(post_save, sender=Credit)

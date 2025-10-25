@@ -19,7 +19,6 @@ from django.urls import path
 
 from . import (
     other
-    ,views
     )
 
 from django.urls import path, include
@@ -67,13 +66,7 @@ path('generate_unique_code/', other.generate_unique_code),
 path('stock_take/',other.stock_take),
 path('send_invoice_email/<int:receipt_id>/',other.send_invoice_email),   
 ]
-sales_patterns=[
 
-
-path("make_transfer/", views.make_transfer),
-
-]
 
 pos_urlpatterns=other_patterns
-pos_urlpatterns+=sales_patterns
 pos_urlpatterns+=[path('', include(router.urls))]

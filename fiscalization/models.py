@@ -2,6 +2,11 @@ from django.db import models
 from matplotlib import lines
 from pos.models import Receipt,Branch,Currency,ReportEntry
 from main.settings import HTML_ROOT
+import qrcode
+from .encryption import *
+from decimal import Decimal
+from django.db.models import F
+import json
 class FiscalBranch(Branch):
     
     # Core details
@@ -65,10 +70,176 @@ class FiscalReceipt(Receipt):
     result_string=models.TextField(default="",null=True)
     fiscal_branch = models.ForeignKey('FiscalBranch', on_delete=models.CASCADE, null=True)
     errors = models.ManyToManyField(ReceiptError, blank=True)
-    day = models.ForeignKey('OpenDay', on_delete=models.CASCADE,null=True)
+    fiscal_day = models.ForeignKey('OpenDay', on_delete=models.CASCADE,null=True)
     verified = models.BooleanField(default=False,null=True)
     verified_at = models.DateTimeField(null=True)
     qrcode=models.FileField(null=True,upload_to=f"{HTML_ROOT}")
+    _tax_line_concat=None
+    _receipt_lines=None
+    _receipt_taxes=None
+    _tax_line_concat=None
+    # Prepare receipt taxes
+    def append_tax(self,taxID, code, percent, amount, sales_with_tax):
+        self._receipt_taxes.append({
+            "taxID": taxID,
+            "taxCode": code,
+            "taxPercent": percent,
+            "taxAmount": round(float(amount), 2) if percent else "0",
+            "SalesAmountwithTax": float(self.Total15VAT)
+        })
+        
+    @property
+    def receipt_lines(self):
+        if self._receipt_lines is None:
+            self._receipt_lines = []  # initialize if empty
+        return self._receipt_lines
+   
+    @receipt_lines.setter
+    def receipt_lines(self, value):
+        self._receipt_lines = value
+    @property    
+    def receipt_taxes(self):
+        self._receipt_taxes = []
+        if not self.fiscal_branch.production:
+            if self.TotalExempt>0:
+             self.append_tax("1", "A", None, 0, self.TotalExempt) 
+            if self.TotalNonVAT>0:
+             self.append_tax("2", "B", 0.00, 0, self.TotalNonVAT) 
+            if self.Total15VAT>0:
+             self.append_tax("3", "C", 15.00, self.tax, self.Total15VAT) 
+        else:
+            if self.Total15VAT>0:
+             self.append_tax("1", "A", 15.00, self.tax, self.Total15VAT) 
+            if self.TotalNonVAT>0:
+             self.append_tax("2", "B", 0.00, 0, self.TotalNonVAT) 
+            if self.TotalExempt>0:
+             self.append_tax("3", "C", None, 0, self.TotalExempt) 
+        return self._receipt_taxes
+    
+    @receipt_taxes.setter
+    def receipt_taxes(self, value):
+        self._receipt_taxes = value
+        
+          
+    def add_receipt_line(self, line):
+        if self._receipt_lines is None:
+            self._receipt_lines = []
+        self._receipt_lines.append(line)
+    
+          
+    def add_tax_line(self, line):
+        if self._receipt_taxes is None:
+            self._receipt_taxes = []
+        self._receipt_taxes.append(line)
+    @property
+    def tax_line_concat(self):
+        self._tax_line_concat=""
+        
+        for taxline in self.receipt_taxes:
+            try:
+                taxPercentForConcat = "15.00" if float(taxline.get("taxPercent", 0)) == 15.0 else "0.00"
+                self._tax_line_concat += (
+                f"{taxline['taxCode']}"
+                f"{taxPercentForConcat}"
+                f"{round(float(taxline['taxAmount']) * 100)}"
+                f"{round(float(taxline['SalesAmountwithTax']) * 100)}"
+            )
+            except Exception as e:
+                self._tax_line_concat += f"{taxline['taxCode']}0{round(float(taxline.get('SalesAmountwithTax', 0)) * 100)}"
+                print(str(e))
+        return self._tax_line_concat
+     
+    def make_fiscal_values(self):
+        mobile_methods = ["Ecocash", "OneMoney", "InnBucks", "Mukuru", "Telecash"]
+        
+        if self.receipt_type=="FISCAL TAX INVOICE":
+            type = 'FISCALINVOICE'
+            multiplier="100"
+    
+        else:
+            if self.receipt_type=="CREDIT NOTE":
+                multiplier="-100"
+                Receipt.objects.filter(id=self.fiscal_receipt.id).update(
+                credited=True
+                )
+            else:
+                multiplier="100"
+                Receipt.objects.filter(id=self.fiscal_receipt.id).update(
+                debited=True
+                )
+        # Copy products
+            type=self.receipt_type.replace(" ","")
+        
+        self.receiptGlobalNo = self.fiscal_branch.globalNo
+        self.receiptCounter = self.fiscal_day.counter
+        self.result_string = f"{self.fiscal_branch.device_id}{type}{self.currency.symbol}{self.receiptGlobalNo}{self.created_at_iso}{int(self.total*Decimal(multiplier))}{self.tax_line_concat}{self.fiscal_day.previousReceiptHash if self.fiscal_day.counter != 1 else ''}"
+        self.signature = sign_data(self.fiscal_branch, self.result_string)
+        self.receiptHash = hash_data(self.result_string)
+        self.md5_hash = get_first16chars_of_signature(self.signature)[:16]
+        # JSON body for receipt
+        self.receiptJsonbody = {
+            "receiptLines": self.receipt_lines,
+            "receiptType": type,
+            "receiptCurrency": self.currency.symbol,
+            "receiptPrintForm": "InvoiceA4" if self.isA4 else "Receipt48",
+            "receiptDate": self.created_at_iso,
+            "receiptPayments": [{"moneyTypeCode": "MobileWallet" if self.payment_method in mobile_methods else self.payment_method, "paymentAmount": round(float(self.payment*Decimal(multiplier)/Decimal("100")), 2)}],
+            "receiptTaxes": self.receipt_taxes,
+            "receiptTotal": float(Decimal(self.total)*Decimal(multiplier)/Decimal("100")),
+            "receiptLinesTaxInclusive": True,
+            "invoiceNo": self.invoiceNo
+        }
+        if not type=="FISCALINVOICE":
+             self.receiptJsonbody["creditDebitNote"]={"receiptGlobalNo":f"{self.fiscal_receipt.receiptGlobalNo}","fiscalDayNo":f"{self.fiscal_receipt.fiscal_day.FiscalDayNo}","receiptID":f"{json.loads(self.fiscal_receipt.serverResponse)['receiptID']}"}
+             self.receiptJsonbody["ReceiptNotes"]=self.reason
+            
+        self.receiptJsonbody["receiptDeviceSignature"] = {"signature": self.signature, "hash": self.receiptHash}
+        self.receiptJsonbody["receiptGlobalNo"] = self.receiptGlobalNo
+        self.receiptJsonbody["receiptCounter"] = self.receiptCounter
+        self.receiptJsonbody["invoiceNo"] = self.invoiceNo
+        if self.customer:
+            self.receiptJsonbody["buyerData"] = {
+                "VATNumber": self.customer.vat_number,
+                "buyerTradeName": self.customer.tradename,
+                "buyerTIN": self.customer.tin_number,
+                "buyerRegisterName": self.customer.name,
+                "buyerAddress": {
+                    "houseNo": self.customer.address,
+                    "province": self.customer.province,
+                    "city": self.customer.city,
+                    "street": self.customer.street
+                },
+                "buyerContacts": {
+                    "email": self.customer.email,
+                    "phoneNo": self.customer.phone_number
+                }
+            }
+        
+
+        self.receiptJsonbody = json.dumps({"receipt": self.receiptJsonbody})
+        OpenDay.objects.filter(id=self.fiscal_day.id).update(
+            counter=F("counter") + 1,
+            previousReceiptHash=self.receiptHash
+            )
+        FiscalBranch.objects.filter(id=self.fiscal_branch.id).update(
+            globalNo=F("globalNo") + 1,
+        )
+        
+        
+        
+        self.qrurl = f"https://{'fdms' if self.fiscal_branch.production else 'fdmstest'}.zimra.co.zw/{self.fiscal_branch.device_id.zfill(10)}{self.day}{self.month}{self.year}{self.receiptGlobalNo:010}{self.md5_hash}"
+        qr = qrcode.QRCode(
+          version=1,  # Controls the size (1 = smallest, 40 = largest)
+          error_correction=qrcode.constants.ERROR_CORRECT_L,  # Low error correction
+          box_size=4,  # Size of each QR box
+          border=1,  # Border thickness
+          )
+        qr.add_data(self.qrurl)
+        qr.make(fit=True)
+        img = qr.make_image(fill="black", back_color="white")
+        img.save(f"{HTML_ROOT}/{self.invoiceNo}.png")
+        self.qrcode=f"{HTML_ROOT}/{self.invoiceNo}.png"
+        
     
     def __str__(self):
         return f"{self.receipt_type} - Total: ${self.total}"
@@ -78,14 +249,29 @@ class FiscalReceipt(Receipt):
 class FiscalCredit(FiscalReceipt):
     fiscal_receipt=models.ForeignKey(FiscalReceipt,on_delete=models.CASCADE,related_name="fiscal_credit")
     reason=models.TextField(null=True)
+    
+    @property
+    def receipt_taxes(self):
+        return self._receipt_taxes
+    @receipt_taxes.setter
+    def receipt_taxes(self, value):
+        self._receipt_taxes = value
+        
     def __str__(self):
         return f"{self.receipt_type} - Total: ${self.total}"
 
 class FiscalDebit(FiscalReceipt):
     fiscal_receipt=models.ForeignKey(FiscalReceipt,on_delete=models.CASCADE,related_name="fiscal_debit")
     reason=models.TextField(null=True)
+    @property
+    def receipt_taxes(self):
+        return self._receipt_taxes
+    @receipt_taxes.setter
+    def receipt_taxes(self, value):
+        self._receipt_taxes = value
     def __str__(self):
         return f"{self.receipt_type} - Total: ${self.total}"
+
 
 class OpenDay(models.Model):
     
@@ -94,10 +280,6 @@ class OpenDay(models.Model):
     FiscalDayClosed = models.TextField(null=True)
     counter=models.IntegerField(default=1)
     open=models.BooleanField(default=1)
-    no_of_receipts_usd=models.IntegerField(default=0)
-    no_of_credits_zwl=models.IntegerField(default=0)
-    no_of_receipts_zwl=models.IntegerField(default=0)
-    no_of_credits_usd=models.IntegerField(default=0)
     branch=models.ForeignKey(FiscalBranch,on_delete=models.CASCADE)
     previousReceiptHash=models.TextField(default="")
     
